@@ -2,8 +2,10 @@
 import { jsx } from "theme-ui";
 import Link from "next/link";
 import { Button } from "theme-ui";
+import { FaStore, FaListAlt, FaShoppingCart } from "react-icons/fa";
 
 import styled from "@emotion/styled";
+import theme from "../../theme";
 
 const NavBar = styled.nav`
   display: flex;
@@ -34,6 +36,9 @@ const NavActions = styled.div`
 const NavLink = styled.a`
   font-size: 1.25em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   margin: 15px 15px;
   cursor: pointer;
@@ -41,34 +46,41 @@ const NavLink = styled.a`
   :hover {
     transform: scale(1.02);
   }
-`;
 
-const NavButton = styled(Button)`
-  color: #fff;
-  background-color: #ff3427 !important;
-  cursor: pointer;
-  :hover {
-    background-color: #ff3440 !important;
+  :last-child {
+    :hover {
+      transform: none;
+      b
+    }
   }
 `;
 
 export default function ProminentAppBar() {
   return (
     <NavBar>
-      <BigLogo src="/pandicaLogo.jpg"></BigLogo>
+      <BigLogo sx={{ marginLeft: "40px" }} src="/pandicaLogo1.jpg"></BigLogo>
       <NavActions>
-        <Link href="#">
-          <NavLink>POČETNA</NavLink>
+        <Link href="/">
+          <NavLink>
+            <FaStore sx={{ marginRight: "5px", color: (theme) => theme.colors.gray }} />
+            POČETNA
+          </NavLink>
         </Link>
-        <Link href="#">
-          <NavLink>MENI</NavLink>
+        <Link href="/menu">
+          <NavLink>
+            <FaListAlt sx={{ marginRight: "5px", color: (theme) => theme.colors.gray }} />
+            MENI
+          </NavLink>
         </Link>
-        <Link href="#">
-          <NavLink>KORPA</NavLink>
+        <Link href="/cart">
+          <NavLink>
+            <FaShoppingCart sx={{ marginRight: "5px", color: (theme) => theme.colors.gray }} />
+            KORPA
+          </NavLink>
         </Link>
         <Link href="#">
           <NavLink>
-            <Button sx={{ backgroundClip: "colors.muted" }}>Poručite odmah</Button>
+            <Button sx={{ cursor: "pointer" }}>Naručite odmah</Button>
           </NavLink>
         </Link>
       </NavActions>

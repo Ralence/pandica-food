@@ -2,11 +2,28 @@ import Head from "next/head";
 import AppBar from "../src/components/AppBar";
 import TopBar from "../src/components/AppTop";
 
+import styled from "@emotion/styled";
+
 import "../styles/globals.css";
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  min-height: 100vh;
+    
+}
+
+
+  background: #eee;
+`;
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <AppContainer>
       <Head>
         <title>Pandica Fast Food</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -19,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       <TopBar />
       <AppBar />
       <Component {...pageProps} />
-    </div>
+    </AppContainer>
   );
 }
 

@@ -8,16 +8,30 @@ import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 
 const TopBar = styled.div`
   width: 100%;
-  height: 40px;
-  background-color: black;
+  min-height: 35px;
+  background-color: #313130;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   color: #fff;
   font-family: "Roboto";
+  padding-left: 20px;
+  padding-right: 20px;
   * {
     margin-left: 5px;
     margin-right: 5px;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    padding-left: calc((100% - 1200px) / 2);
+    padding-right: calc((100% - 1200px) / 2);
   }
 `;
 
@@ -28,18 +42,39 @@ const Section = styled.div`
   justify-content: space-around;
 `;
 
+const InstaIcon = styled(InstagramIcon)`
+  color: #da545c;
+`;
+
+const FbIcon = styled(FacebookIcon)`
+  color: #28a6f7;
+`;
+
+const ClockIcon = styled(QueryBuilderIcon)`
+  color: #ff3427;
+  margin-left: 0;
+`;
+
+const PhoneIcon = styled(ContactPhoneIcon)`
+  color: #ff3427;
+`;
+
 const AppTop = () => {
   return (
     <TopBar>
       <Section>
-        Follow us on social media:
-        <FacebookIcon fill="beige" />
-        <InstagramIcon fill="beige" />
+        Društvene mreže:
+        <a href="https://www.facebook.com/" target="_blank">
+          <FbIcon />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <InstaIcon />
+        </a>
       </Section>
       <Section>
-        <QueryBuilderIcon fill="beige" />
+        <ClockIcon />
         10:00 - 21:00
-        <ContactPhoneIcon fill="beige" />
+        <PhoneIcon />
         011/111-2222
       </Section>
     </TopBar>

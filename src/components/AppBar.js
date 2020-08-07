@@ -1,4 +1,5 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import Link from "next/link";
 import { Button } from "theme-ui";
 
@@ -23,17 +24,16 @@ const BigLogo = styled.img`
 const NavActions = styled.div`
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-self: flex-end;
+  align-items: center;
   flex-wrap: wrap;
   flex-grow: 1;
-  height: 100%;
   background: transparent;
 `;
 
 const NavLink = styled.a`
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: bold;
-  color: #313130;
 
   margin: 15px 15px;
   cursor: pointer;
@@ -68,9 +68,7 @@ export default function ProminentAppBar() {
         </Link>
         <Link href="#">
           <NavLink>
-            <NavButton variant="contained" disableElevation>
-              Poručite odmah
-            </NavButton>
+            <Button sx={{ backgroundClip: "colors.muted" }}>Poručite odmah</Button>
           </NavLink>
         </Link>
       </NavActions>

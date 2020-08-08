@@ -19,7 +19,6 @@ const AppContainer = styled.div`
   flex-grow: 1;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
   min-height: 100vh;
 
   background: #eee;
@@ -32,11 +31,16 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <title>Pandica Fast Food</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
+          {/**Add <roboto font */}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          {/** Add Caveat font */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <TopBar />
         <AppBar />

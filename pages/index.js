@@ -1,3 +1,9 @@
-export default function Home() {
-  return <div>HOME</div>;
-}
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import Gallery from "../src/components/Gallery";
+
+const index = () => {
+  return <Gallery />;
+};
+
+export default index;

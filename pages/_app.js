@@ -42,6 +42,7 @@ function MyApp({ Component, pageProps }) {
             href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
             rel="stylesheet"
           ></link>
+          <link rel="icon" type="image/png" href="/pandicaFav.jpg"></link>
         </Head>
         <TopBar />
         <AppBar />

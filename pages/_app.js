@@ -4,6 +4,7 @@ import { jsx } from "theme-ui";
 import Head from "next/head";
 import AppBar from "../src/components/AppBar";
 import TopBar from "../src/components/AppTop";
+import AppFooter from "../src/components/AppFooter";
 
 import { ThemeProvider } from "theme-ui";
 
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }) {
         <TopBar />
         <AppBar />
         <Component {...pageProps} />
+        <AppFooter />
       </AppContainer>
     </ThemeProvider>
   );

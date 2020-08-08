@@ -16,7 +16,7 @@ const AppFooter = () => {
         justifyContent: "center",
         p: 2,
         variant: "styles.footer",
-        backgroundColor: (theme) => theme.colors.text,
+        backgroundColor: (theme) => theme.colors.gray,
         color: (theme) => theme.colors.background,
       }}
     >
@@ -36,7 +36,7 @@ const AppFooter = () => {
           sx={{
             cursor: "pointer",
             ":hover": {
-              color: (theme) => theme.colors.primary,
+              color: (theme) => theme.colors.highlight,
             },
           }}
         >

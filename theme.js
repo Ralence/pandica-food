@@ -17,6 +17,10 @@ const theme = {
       mx: "auto",
     },
   },
+  fonts: {
+    ...swiss.fonts,
+    cursive: "Caveat, cursive",
+  },
   styles: {
     ...swiss.styles,
   },

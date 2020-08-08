@@ -80,7 +80,6 @@ export default function ProminentAppBar() {
 
   const router = useRouter();
 
-  console.log(router);
   return (
     <NavBar>
       <BigLogo sx={{ marginLeft: "40px" }} src="/pandicaLogo1.jpg"></BigLogo>
@@ -165,6 +164,8 @@ export default function ProminentAppBar() {
                 <Button
                   sx={{
                     cursor: "pointer",
+                    fontFamily: theme.fonts.cursive,
+                    textTransform: "uppercase",
                     ":hover": {
                       backgroundColor: (theme) => theme.colors.secondary,
                     },
@@ -234,6 +235,8 @@ export default function ProminentAppBar() {
               <Button
                 sx={{
                   cursor: "pointer",
+                  fontFamily: theme.fonts.cursive,
+                  textTransform: "uppercase",
                   ":hover": {
                     backgroundColor: (theme) => theme.colors.secondary,
                   },

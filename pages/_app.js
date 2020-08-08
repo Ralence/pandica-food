@@ -21,14 +21,12 @@ const AppContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-
-  background: #eee;
 `;
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer>
+      <AppContainer sx={{ backgroundColor: theme.colors.highlight }}>
         <Head>
           <title>Pandica Fast Food</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />

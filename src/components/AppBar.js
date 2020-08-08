@@ -2,6 +2,7 @@
 import { Fragment, useState, useEffect } from "react";
 import { jsx } from "theme-ui";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Button, Close, MenuButton } from "theme-ui";
 import { FaStore, FaListAlt, FaShoppingCart } from "react-icons/fa";
 
@@ -77,6 +78,9 @@ const NavLink = styled.a`
 export default function ProminentAppBar() {
   const [menuOpened, setMenuOpened] = useState(false);
 
+  const router = useRouter();
+
+  console.log(router);
   return (
     <NavBar>
       <BigLogo sx={{ marginLeft: "40px" }} src="/pandicaLogo1.jpg"></BigLogo>
@@ -107,6 +111,8 @@ export default function ProminentAppBar() {
               <NavLink
                 sx={{
                   ":hover": { color: (theme) => theme.colors.secondary },
+                  borderBottom: router.pathname === "/" ? `2px solid ${theme.colors.primary}` : "",
+                  color: router.pathname === "/" ? theme.colors.primary : "",
                   "@media screen and (min-width: 651px)": {
                     display: "none",
                   },
@@ -120,6 +126,9 @@ export default function ProminentAppBar() {
               <NavLink
                 sx={{
                   ":hover": { color: (theme) => theme.colors.secondary },
+                  borderBottom:
+                    router.pathname === "/menu" ? `2px solid ${theme.colors.primary}` : "",
+                  color: router.pathname === "/menu" ? theme.colors.primary : "",
                   "@media screen and (min-width: 651px)": {
                     display: "none",
                   },
@@ -133,6 +142,9 @@ export default function ProminentAppBar() {
               <NavLink
                 sx={{
                   ":hover": { color: (theme) => theme.colors.secondary },
+                  borderBottom:
+                    router.pathname === "/cart" ? `2px solid ${theme.colors.primary}` : "",
+                  color: router.pathname === "/cart" ? theme.colors.primary : "",
                   "@media screen and (min-width: 651px)": {
                     display: "none",
                   },
@@ -169,6 +181,8 @@ export default function ProminentAppBar() {
             <NavLink
               sx={{
                 ":hover": { color: (theme) => theme.colors.secondary },
+                borderBottom: router.pathname === "/" ? `2px solid ${theme.colors.primary}` : "",
+                color: router.pathname === "/" ? theme.colors.primary : "",
                 "@media screen and (max-width: 650px)": {
                   display: "none",
                 },
@@ -187,6 +201,9 @@ export default function ProminentAppBar() {
             <NavLink
               sx={{
                 ":hover": { color: (theme) => theme.colors.secondary },
+                borderBottom:
+                  router.pathname === "/menu" ? `2px solid ${theme.colors.primary}` : "",
+                color: router.pathname === "/menu" ? theme.colors.primary : "",
                 "@media screen and (max-width: 650px)": {
                   display: "none",
                 },
@@ -200,6 +217,9 @@ export default function ProminentAppBar() {
             <NavLink
               sx={{
                 ":hover": { color: (theme) => theme.colors.secondary },
+                borderBottom:
+                  router.pathname === "/cart" ? `2px solid ${theme.colors.primary}` : "",
+                color: router.pathname === "/cart" ? theme.colors.primary : "",
                 "@media screen and (max-width: 650px)": {
                   display: "none",
                 },

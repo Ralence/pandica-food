@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import MainBrandArea from "../src/components/MainBrandArea";
 import ImgBanner from "../src/components/ImgBanner";
 import Gallery from "../src/components/Gallery";
+import Recommendation from "../src/components/Recommend";
 import theme from "../theme";
 
 const index = () => {
@@ -29,6 +30,7 @@ const index = () => {
           </span>
         </p>
       </MainBrandArea>
+      <Recommendation />
       <Gallery />
     </Fragment>
   );

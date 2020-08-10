@@ -24,8 +24,7 @@ const Recommend = () => {
           sx={{
             variant: "containers.card",
             flex: 1,
-            width: "300px",
-            minWidth: "200px",
+            minWidth: "250px",
             margin: "10px",
           }}
         >
@@ -38,8 +37,7 @@ const Recommend = () => {
           sx={{
             variant: "containers.card",
             flex: 1,
-            width: "300px",
-            minWidth: "200px",
+            minWidth: "250px",
             margin: "10px",
           }}
         >
@@ -52,8 +50,7 @@ const Recommend = () => {
           sx={{
             variant: "containers.card",
             flex: 1,
-            width: "300px",
-            minWidth: "200px",
+            minWidth: "250px",
             margin: "10px",
           }}
         >

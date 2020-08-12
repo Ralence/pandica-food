@@ -13,11 +13,11 @@ const index = () => {
     <Fragment>
       <ImgBanner image={"/chef.jpg"} alt="chef with a wok" />
       <MainBrandArea title="Restoran Pandica" subTitle="Najbolje kineska hrana u gradu!">
-        <p sx={{ fontSize: 4, textAlign: "center", margin: 0 }}>
+        <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
           Za vas vršimo pripremu i dostavu kineskih jela vrhunskog ukusa i kvaliteta!
         </p>
 
-        <p sx={{ fontSize: 4, textAlign: "center", margin: 0 }}>
+        <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
           Poručite hranu brzo i lako,
           <span
             sx={{

@@ -20,6 +20,8 @@ const MainBrandArea = (props) => {
       <h1
         sx={{
           fontFamily: theme.fonts.cursive,
+          color: theme.colors.primary,
+          textShadow: "2px 2px 4px " + theme.colors.gray,
           fontSize: 7,
           marginBottom: 0,
           textAlign: "center",
@@ -30,7 +32,8 @@ const MainBrandArea = (props) => {
       </h1>
       <p
         sx={{
-          fontSize: 4,
+          fontSize: 3,
+          fontWeight: 700,
           textAlign: "center",
           margin: 0,
           marginTop: "1em",

@@ -20,6 +20,7 @@ const Recommend = () => {
           marginBottom: 0,
           textAlign: "center",
           lineHeight: "1em",
+          "@media screen and (max-width: 700px)": { fontSize: 5 },
         }}
       >
         Naša Preporuka

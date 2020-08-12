@@ -26,6 +26,9 @@ const MainBrandArea = (props) => {
           marginBottom: 0,
           textAlign: "center",
           lineHeight: "1em",
+          "@media screen and (max-width: 700px)": {
+            fontSize: 6,
+          },
         }}
       >
         {title}

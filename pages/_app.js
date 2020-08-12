@@ -26,7 +26,7 @@ const AppContainer = styled.div`
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer sx={{ backgroundColor: theme.colors.highlight }}>
+      <AppContainer sx={{ backgroundColor: theme.colors.mainBackground }}>
         <Head>
           <title>Pandica Fast Food</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -38,6 +38,10 @@ function MyApp({ Component, pageProps }) {
           {/** Add Caveat font */}
           <link
             href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
             rel="stylesheet"
           ></link>
           <link rel="icon" type="image/png" href="/pandicaFav.jpg"></link>

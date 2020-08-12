@@ -19,7 +19,11 @@ const theme = {
   },
   fonts: {
     ...swiss.fonts,
-    cursive: "Caveat, cursive",
+    cursive: "'Courgette', cursive",
+  },
+  colors: {
+    ...swiss.colors,
+    mainBackground: "#f5fff6",
   },
   styles: {
     ...swiss.styles,

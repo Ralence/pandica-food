@@ -1,11 +1,27 @@
 /** @jsx jsx */
-import { jsx, Box, Card, Text, Image, Button } from "theme-ui";
-import React from "react";
+import { jsx, Box, Card, Text, Image, Button, Label, Checkbox } from "theme-ui";
+import React, { useState } from "react";
 
 import theme from "../../theme";
 import styled from "@emotion/styled";
 
+const MainArea = styled.div`
+  width: 100%;
+  height: 0;
+  min-height: 0;
+  transition: all 1s ease-in;
+  overflow: hidden;
+  border: 1px solid gray;
+`;
+
 const MenuSection = ({ title, image }) => {
+  const [expand, setExpand] = useState(false);
+  const menuItem = {
+    title: "Item one",
+    description: "This is the first menu item created for Pandica",
+    extras: ["item one", "item two", "item three"],
+    imageURl: "/soup.jpg",
+  };
   return (
     <Card
       sx={{
@@ -17,6 +33,9 @@ const MenuSection = ({ title, image }) => {
         backgroundColor: theme.colors.background,
         "@media screen and (max-width: 400px)": {
           marginX: 0,
+        },
+        ".expand": {
+          minHeight: `${5 * 75}px`,
         },
       }}
     >
@@ -43,19 +62,70 @@ const MenuSection = ({ title, image }) => {
           sx={{
             marginRight: 3,
             marginLeft: "auto",
+            cursor: "pointer",
             "@media screen and (max-width: 600px)": { marginRight: "3px" },
           }}
+          onClick={() => setExpand(!expand)}
         >
-          <span
-            sx={{
-              "@media screen and (max-width: 340px)": { display: "none" },
-            }}
-          >
-            Prikaži Ponudu
-          </span>{" "}
-          &darr;
+          {!expand ? (
+            <span
+              sx={{
+                "@media screen and (max-width: 340px)": { display: "none" },
+              }}
+            >
+              Prikaži Ponudu &darr;
+            </span>
+          ) : (
+            <span>&uarr;</span>
+          )}
         </Button>
       </header>
+      <MainArea
+        className={expand ? "expand" : ""}
+        sx={{
+          paddingTop: expand ? 4 : 0,
+        }}
+      >
+        <Box
+          sx={{
+            marginX: 3,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Image
+            src={image}
+            sx={{ height: "60px", width: "60px", objectFit: "cover", borderRadius: "50%" }}
+          />
+          <Text sx={{ fontSize: 3, fontWeight: "bold", color: theme.colors.secondary }}>
+            {menuItem.title}
+          </Text>
+          <Box
+            sx={{
+              marginX: 1,
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            <Label>
+              Option one
+              <Checkbox defaultChecked={false} />
+            </Label>
+            <Label>
+              Option two
+              <Checkbox defaultChecked={false} />
+            </Label>
+            <Label>
+              Option three
+              <Checkbox defaultChecked={false} />
+            </Label>
+          </Box>
+        </Box>
+      </MainArea>
     </Card>
   );
 };

@@ -11,6 +11,7 @@ const AppFooter = () => {
         width: "100%",
         flexWrap: "wrap",
         flexDirection: "column",
+        marginTop: 5,
         padding: "50px",
         alignItems: "center",
         justifyContent: "center",

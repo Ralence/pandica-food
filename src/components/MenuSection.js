@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Box, Card, Text, Image, Button, Label, Checkbox } from "theme-ui";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import MenuItem from "./MenuItem";
 
 import theme from "../../theme";
@@ -69,13 +69,16 @@ const MenuSection = ({ title, image }) => {
           onClick={() => setExpand(!expand)}
         >
           {!expand ? (
-            <span
-              sx={{
-                "@media screen and (max-width: 340px)": { display: "none" },
-              }}
-            >
-              Prikaži Ponudu &darr;
-            </span>
+            <Fragment>
+              <span
+                sx={{
+                  "@media screen and (max-width: 340px)": { display: "none" },
+                }}
+              >
+                Prikaži Ponudu
+              </span>{" "}
+              &darr;
+            </Fragment>
           ) : (
             <span>&uarr;</span>
           )}
@@ -84,7 +87,7 @@ const MenuSection = ({ title, image }) => {
       <MainArea
         className={expand ? "expand" : ""}
         sx={{
-          paddingTop: expand ? 4 : 0,
+          paddingTop: expand ? 2 : 0,
         }}
       >
         <MenuItem />

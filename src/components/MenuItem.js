@@ -19,17 +19,31 @@ const MenuItem = () => {
         marginX: 3,
         display: "flex",
         flexDirection: "row",
+        flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "space-between",
       }}
     >
-      <Image
-        src="/soup.jpg"
-        sx={{ height: "60px", width: "60px", objectFit: "cover", borderRadius: "50%" }}
-      />
-      <Text sx={{ fontSize: 3, fontWeight: "bold", color: theme.colors.secondary }}>
-        {menuItem.title}
-      </Text>
+      <Box
+        sx={{
+          m: 0,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          src="/soup.jpg"
+          sx={{ height: "50px", width: "50px", objectFit: "cover", borderRadius: "50%" }}
+        />
+        <Text
+          sx={{ fontSize: 3, fontWeight: "bold", color: theme.colors.secondary, marginLeft: 1 }}
+        >
+          {menuItem.title}
+        </Text>
+      </Box>
+
       <Box
         sx={{
           marginX: 1,
@@ -37,21 +51,18 @@ const MenuItem = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
+          marginLeft: "auto",
         }}
       >
-        <Label>
-          Option one
-          <Checkbox defaultChecked={false} />
-        </Label>
-        <Label>
-          Option two
-          <Checkbox defaultChecked={false} />
-        </Label>
-        <Label>
-          Option three
-          <Checkbox defaultChecked={false} />
-        </Label>
+        <Text sx={{ fontSize: 2, fontWeight: "bold", color: theme.colors.gray, m: 1 }}>
+          Standard: <span sx={{ color: theme.colors.secondary }}>400Din</span>
+        </Text>
+        <Text sx={{ fontSize: 2, fontWeight: "bold", color: theme.colors.gray, m: 1 }}>
+          Mala: <span sx={{ color: theme.colors.secondary }}>200Din</span>
+        </Text>
       </Box>
+
+      <Button sx={{ marginLeft: "auto" }}>Dodaj u korpu</Button>
     </Box>
   );
 };

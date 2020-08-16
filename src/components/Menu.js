@@ -30,10 +30,19 @@ const Menu = ({ menu }) => {
       )}
       {menu && menu.glavna_jela && (
         <MenuSection
+          image="/soup.jpg"
           title={menu.glavna_jela.title}
           items={menu.glavna_jela.items}
           description={menu.glavna_jela.description}
           meats={menu.glavna_jela.meats}
+        />
+      )}
+      {menu && menu.specijalni_meni && (
+        <MenuSection
+          image="/soup.jpg"
+          title={menu.specijalni_meni.title}
+          items={menu.specijalni_meni.items}
+          description={menu.specijalni_meni.description}
         />
       )}
     </MenuContainer>

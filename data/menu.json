@@ -42,5 +42,19 @@
       { "title": "Sa paprikom i brokolijem", "price": ["420/570", "450/610", "420/570"] },
       { "title": "U ostriga sosu", "price": ["380/520", "420/560", "380/520"] }
     ]
+  },
+  "specijalni_meni": {
+    "title": "Specijalni meni",
+    "description": "Mala porcija 500g / Standardna porcija 800g",
+    "items": [
+      { "title": "Hrskava piletine u sosu po želji", "price": ["420/570"] },
+      { "title": "Kraljevska piletine", "price": ["450/650"] },
+      { "title": "Pohovana piletina u sosu po želji", "price": ["420/570"] },
+      { "title": "Pohovana svinjetina u sosu po želji", "price": ["420/570"] },
+      { "title": "Pohovana teletina u sosu po želji", "price": ["500/650"] },
+      { "title": "Pohovana pačetina u sosu po želji", "price": ["500/700"] },
+      { "title": "Kung pao piletina", "price": ["450/650"] },
+      { "title": "PANDICA nudle", "price": ["450/550"] }
+    ]
   }
 }

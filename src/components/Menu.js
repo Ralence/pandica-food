@@ -45,6 +45,9 @@ const Menu = ({ menu }) => {
           description={menu.specijalni_meni.description}
         />
       )}
+      {menu && menu.salate && (
+        <MenuSection image="/soup.jpg" title={menu.salate.title} items={menu.salate.items} />
+      )}
     </MenuContainer>
   );
 };

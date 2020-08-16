@@ -17,12 +17,7 @@ const MainArea = styled.div`
 
 const MenuSection = ({ title, image, description, items, meats }) => {
   const [expand, setExpand] = useState(false);
-  const menuItem = {
-    title: "Item one",
-    description: "This is the first menu item created for Pandica",
-    extras: ["item one", "item two", "item three"],
-    imageURl: "/soup.jpg",
-  };
+
   return (
     <Card
       sx={{
@@ -31,7 +26,7 @@ const MenuSection = ({ title, image, description, items, meats }) => {
         flex: 1,
         minWidth: "280px",
         margin: "10px",
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.colors.mainBackground,
         "@media screen and (max-width: 400px)": {
           marginX: 0,
         },
@@ -98,6 +93,7 @@ const MenuSection = ({ title, image, description, items, meats }) => {
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
+          backgroundColor: "white",
         }}
       >
         {items &&

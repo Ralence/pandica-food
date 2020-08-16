@@ -56,5 +56,13 @@
       { "title": "Kung pao piletina", "price": ["450/650"] },
       { "title": "PANDICA nudle", "price": ["450/550"] }
     ]
+  },
+  "salate": {
+    "title": "Salate",
+    "items": [
+      { "title": "Vitaminska", "price": ["180"] },
+      { "title": "Ljuta sirača salata", "price": ["200"] },
+      { "title": "Susam kikiriki salata", "price": ["220"] }
+    ]
   }
 }

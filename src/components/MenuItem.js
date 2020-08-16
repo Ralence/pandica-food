@@ -18,6 +18,7 @@ const MenuItem = ({ item, meats }) => {
         alignItems: "center",
         justifyContent: "space-between",
         borderBottom: "1px solid gray",
+        backgroundColor: "background",
       }}
     >
       <Box

@@ -15,7 +15,7 @@ const MainArea = styled.div`
   border: 1px solid gray;
 `;
 
-const MenuSection = ({ title, image }) => {
+const MenuSection = ({ title, image, description, items, meats }) => {
   const [expand, setExpand] = useState(false);
   const menuItem = {
     title: "Item one",
@@ -36,7 +36,10 @@ const MenuSection = ({ title, image }) => {
           marginX: 0,
         },
         ".expand": {
-          minHeight: `${5 * 75}px`,
+          minHeight: `${items.length * 110}px`,
+          "@media screen and (max-width: 800px)": {
+            minHeight: `${items.length * 165}px`,
+          },
         },
       }}
     >
@@ -48,7 +51,7 @@ const MenuSection = ({ title, image }) => {
           p: 0,
         }}
       >
-        <Image src={image} sx={{ height: "70px", width: "70px", objectFit: "cover" }} />
+        <Image src={image} sx={{ height: "70px", width: "70px", objectFit: "cover" }} alt={title} />
         <Text
           sx={{
             fontSize: 5,
@@ -84,13 +87,28 @@ const MenuSection = ({ title, image }) => {
           )}
         </Button>
       </header>
+
+      {description && expand && (
+        <Text sx={{ textAlign: "center", color: "gray", fontWeight: "bold" }}>{description}</Text>
+      )}
       <MainArea
         className={expand ? "expand" : ""}
         sx={{
           paddingTop: expand ? 2 : 0,
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
         }}
       >
-        <MenuItem />
+        {items &&
+          items.map((item) => (
+            <MenuItem
+              key={item.title}
+              className="menu_item"
+              item={item}
+              meats={meats ? meats : null}
+            />
+          ))}
       </MainArea>
     </Card>
   );

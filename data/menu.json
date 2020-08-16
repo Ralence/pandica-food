@@ -1,0 +1,46 @@
+{
+  "supe": {
+    "title": "Supe i predjela",
+    "items": [
+      {
+        "title": "Rolnice meso",
+        "price": ["200"]
+      },
+      {
+        "title": "Rolnice povrće",
+        "price": ["180"]
+      },
+      {
+        "title": "Kiselo-ljuta supa",
+        "price": ["170"]
+      }
+    ]
+  },
+  "glavna_jela": {
+    "title": "Glavni meni",
+    "description": "Mala porcija 500g / Standardna porcija 800g",
+    "meats": ["piletina", "teletina", "svinjetina"],
+    "items": [
+      { "title": "U soja sosu", "price": ["350/480", "390/520", "350/480"] },
+      { "title": "Sa šampinjonima", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "Sa kikirikijem", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "Sa indijskim orahom", "price": ["420/570", "450/610", "420/570"] },
+      { "title": "Sa bademom", "price": ["420/570", "450/610", "420/570"] },
+      { "title": "U sečuan sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U kiselo-slatkom sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U kiselo-slatkom-ljutom sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U kiselo-slatkom-soja sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U slatko-ljutom sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U kiselo-ljutom sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "Sa bambusom i šitake pečurkama", "price": ["420/570", "450/610", "420/570"] },
+      { "title": "U sosu sa 7 začina", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U Peking sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U kari sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U sosu sa čilijem i belim lukom", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "U terijaki sosu", "price": ["380/520", "420/560", "380/520"] },
+      { "title": "Sa spanaćem i nanom", "price": ["420/570", "450/610", "420/570"] },
+      { "title": "Sa paprikom i brokolijem", "price": ["420/570", "450/610", "420/570"] },
+      { "title": "U ostriga sosu", "price": ["380/520", "420/560", "380/520"] }
+    ]
+  }
+}

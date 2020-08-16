@@ -64,5 +64,16 @@
       { "title": "Ljuta sirača salata", "price": ["200"] },
       { "title": "Susam kikiriki salata", "price": ["220"] }
     ]
+  },
+  "deserti": {
+    "title": "Deserti",
+    "items": [
+      { "title": "Pohovana čokolada", "price": ["200"] },
+      { "title": "Pohovana banana", "price": ["180"] },
+      { "title": "Pohovani ananas", "price": ["180"] },
+      { "title": "Pohovana jabuka", "price": ["180"] },
+      { "title": "Pohovani sladoled", "price": ["250"] },
+      { "title": "Slatke tajlandske rolnice", "price": ["200"] }
+    ]
   }
 }

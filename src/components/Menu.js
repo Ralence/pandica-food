@@ -48,6 +48,9 @@ const Menu = ({ menu }) => {
       {menu && menu.salate && (
         <MenuSection image="/soup.jpg" title={menu.salate.title} items={menu.salate.items} />
       )}
+      {menu && menu.deserti && (
+        <MenuSection image="/soup.jpg" title={menu.deserti.title} items={menu.deserti.items} />
+      )}
     </MenuContainer>
   );
 };

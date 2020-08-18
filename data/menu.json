@@ -57,6 +57,17 @@
       { "title": "PANDICA nudle", "price": ["450/550"] }
     ]
   },
+  "vegetarijanski_meni": {
+    "title": "Vegetarijanski meni",
+    "description": "Mala porcija 500g / Standardna porcija 800g",
+    "items": [
+      { "title": "Mešano sezonsko povrće u sosu po želji", "price": "370/500" },
+      { "title": "Pohovani tofu sir u sosu po želji", "price": "370/500" },
+      { "title": "Pohovane lignje u sosu po želji", "price": "400/600" },
+      { "title": "Pohovani račići u sosu po želji", "price": "520/720" },
+      { "title": "Pohovana riba u sosu po želji", "price": "400/600" }
+    ]
+  },
   "salate": {
     "title": "Salate",
     "items": [
@@ -74,6 +85,22 @@
       { "title": "Pohovana jabuka", "price": ["180"] },
       { "title": "Pohovani sladoled", "price": ["250"] },
       { "title": "Slatke tajlandske rolnice", "price": ["200"] }
+    ]
+  },
+  "dodaci": {
+    "items": [
+      { "title": "Badem", "price": "100" },
+      { "title": "Indijski orah", "price": "100" },
+      { "title": "Bambus-šitake", "price": "100" },
+      { "title": "Šampinjoni", "price": "70" },
+      { "title": "Nudle", "price": "50" },
+      { "title": "Pirinač", "price": "80" },
+      { "title": "Pirinač u soja sosu", "price": "140" },
+      { "title": "Pirinač u kari sosu", "price": "140" },
+      { "title": "Pirinač sa povrćem", "price": "150" },
+      { "title": "Dodatak sos po želji", "price": "80" },
+      { "title": "Ananas", "price": "100" },
+      { "title": "Fensi miks povrća", "price": "120" }
     ]
   }
 }

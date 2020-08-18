@@ -45,6 +45,14 @@ const Menu = ({ menu }) => {
           description={menu.specijalni_meni.description}
         />
       )}
+      {menu && menu.vegetarijanski_meni && (
+        <MenuSection
+          image="/soup.jpg"
+          title={menu.vegetarijanski_meni.title}
+          items={menu.vegetarijanski_meni.items}
+          description={menu.vegetarijanski_meni.description}
+        />
+      )}
       {menu && menu.salate && (
         <MenuSection image="/soup.jpg" title={menu.salate.title} items={menu.salate.items} />
       )}

@@ -153,7 +153,7 @@ export default function ProminentAppBar() {
                 KORPA
               </NavLink>
             </Link>
-            <Link href="#">
+            <Link href="/cart">
               <NavLink
                 sx={{
                   "@media screen and (min-width: 651px)": {
@@ -230,7 +230,7 @@ export default function ProminentAppBar() {
               KORPA
             </NavLink>
           </Link>
-          <Link href="#">
+          <Link href="/cart">
             <NavLink>
               <Button
                 sx={{

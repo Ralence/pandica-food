@@ -17,7 +17,7 @@ const menu = ({ menu }) => {
       <ImgBanner image={"/chopstick.jpg"} alt="chopsticks and bowl of noodles" />
       <MainBrandArea title="Naš Meni" subTitle="Odaberite nešto iz naše ponude!">
         <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
-          Za vas smo pripremili bogat izbor jela i pića uključujući supe, ljubiš me u dupe
+          Za vas smo pripremili bogat izbor jela i pića.
         </p>
       </MainBrandArea>
       <Menu menu={menu} />

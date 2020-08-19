@@ -70,7 +70,7 @@ const MenuSection = ({ title, image, description, items, meats }) => {
             <Fragment>
               <span
                 sx={{
-                  "@media screen and (max-width: 340px)": { display: "none" },
+                  "@media screen and (max-width: 540px)": { display: "none" },
                 }}
               >
                 Prikaži Ponudu

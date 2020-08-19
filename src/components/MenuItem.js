@@ -2,10 +2,13 @@
 import { jsx, Box, Card, Text, Image, Button, Label, Checkbox } from "theme-ui";
 import React, { useState } from "react";
 
+import Modal from "./modal/Modal";
+
 import theme from "../../theme";
 import styled from "@emotion/styled";
 
 const MenuItem = ({ item, meats }) => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <Box
       sx={{
@@ -93,9 +96,11 @@ const MenuItem = ({ item, meats }) => {
           cursor: "pointer",
           "@media screen and (max-width: 650px)": { marginLeft: "auto" },
         }}
+        onClick={() => setShowModal(!showModal)}
       >
         Dodaj u korpu
       </Button>
+      {showModal && <Modal onClose={() => setShowModal(false)} item={item} />}
     </Box>
   );
 };

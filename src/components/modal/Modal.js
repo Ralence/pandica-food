@@ -13,14 +13,6 @@ class Modal extends Component {
     modalSize: "md",
   };
 
-  /*static propTypes = {
-    id: PropTypes.string.isRequired,
-    onClose: PropTypes.func.isRequired,
-    isOpen: PropTypes.bool.isRequired,
-    modalClass: PropTypes.string,
-    modalSize: PropTypes.string,
-  };*/
-
   state = { fadeType: null };
 
   background = React.createRef();
@@ -69,16 +61,42 @@ class Modal extends Component {
         modalSize={this.props.modalSize}
         onTransitionEnd={this.transitionEnd}
       >
-        <Box className="box-dialog" sx={{ paddingY: "10px" }}>
-          <div className="box-header">
-            <h4 className="box-title">{title}</h4>
+        <Box
+          className="box-dialog"
+          sx={{
+            paddingY: "10px",
+            paddingTop: 0,
+          }}
+        >
+          <div
+            className="box-header"
+            sx={{
+              backgroundImage: "url(/pandicaBanner.jpg)",
+              backgroundPosition: "center",
+              height: "90px",
+            }}
+          >
             <Close
               onClick={this.handleClick}
               className="close"
               sx={{ width: "40px", minWidth: "40px" }}
             ></Close>
           </div>
-          <div className="box-content">{this.props.children}</div>
+          <div className="box-content" sx={{ paddingTop: 0 }}>
+            <h2
+              className="box-title"
+              sx={{
+                color: "primary",
+                fontWeight: "bolder",
+                padding: 1,
+                margin: 1,
+              }}
+            >
+              {title}
+            </h2>
+            {this.props.children}
+          </div>
+
           <div className="box-footer">
             <Button onClick={() => {}} className="close" sx={{ margin: "5px" }}>
               U korpu

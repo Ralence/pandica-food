@@ -50,6 +50,7 @@ const Modal = styled.div`
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     .box-content {
       padding: 24px;
+      padding-top: 0;
       width: 100%;
     }
     .box-header {

@@ -6,6 +6,8 @@ import AppBar from "../src/components/AppBar";
 import TopBar from "../src/components/AppTop";
 import AppFooter from "../src/components/AppFooter";
 
+import { wrapper } from "../store/index";
+
 import { ThemeProvider } from "theme-ui";
 
 import theme from "../theme";
@@ -55,4 +57,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

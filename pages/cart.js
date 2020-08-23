@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
 
 import MainBrandArea from "../src/components/MainBrandArea";
 
 import ImgBanner from "../src/components/ImgBanner";
 
 const cart = () => {
+  const cart = useSelector((state) => state.cart);
+  console.log(cart);
   return (
     <Fragment>
       <ImgBanner image={"/wok.jpg"} alt="wok full of food" />

@@ -171,7 +171,6 @@ class Modal extends Component {
                             totalPrice: parseInt(prices[selectedMeat][value]),
                           }));
                         }}
-                        placeholder="Vrsta mesa"
                       >
                         <option value="" sx={{ width: "100%" }}>
                           Veličina Porcije
@@ -247,13 +246,101 @@ class Modal extends Component {
                 </Fragment>
               )}
             </div>
+            {section && (section === "Specijalni meni" || section === "Vegetarijanski meni") && (
+              <Fragment>
+                <Select
+                  defaultValue=""
+                  sx={{ width: "200px", marginY: 1 }}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    this.setState((oldState) => ({
+                      ...oldState,
+                      orderSize: value,
+                      totalPrice: parseInt(price[value]),
+                    }));
+                  }}
+                >
+                  <option value="" sx={{ width: "100%" }}>
+                    Veličina Porcije
+                  </option>
+                  <option value="small" sx={{ width: "100%" }}>
+                    Mala
+                  </option>
+                  <option value="standard" sx={{ width: "100%" }}>
+                    Standard
+                  </option>
+                </Select>
+                {orderSize && (
+                  <Fragment>
+                    <h4 sx={{ margin: 1 }}>
+                      Ukoliko želite možete izabrate maksimalno dva dodatka
+                    </h4>
+                    <Select
+                      defaultValue=""
+                      sx={{ width: "200px", marginY: 1 }}
+                      onChange={(e) => {
+                        const value = parseInt(JSON.parse(e.target.value).price);
+                        const name = JSON.parse(e.target.value).title;
+                        console.log(e.target.value);
+                        this.setState((oldState) => ({
+                          ...oldState,
+                          dodaciJelu: [...oldState.dodaciJelu, { name, cost: value }],
+                          totalPrice: oldState.totalPrice + value,
+                        }));
+                      }}
+                      placeholder="Dodatci"
+                    >
+                      <option value="" sx={{ width: "100%" }}>
+                        Dodaci
+                      </option>
+                      {dodaci &&
+                        dodaci.items.map((item, index) => (
+                          <option key={item.title} value={JSON.stringify(item)} name={item.title}>
+                            {item.title}: {item.price}din
+                          </option>
+                        ))}
+                    </Select>
+                  </Fragment>
+                )}
+                {orderSize && dodaciJelu.length > 0 && dodaciJelu.length < 3 && (
+                  <Select
+                    defaultValue=""
+                    sx={{ width: "200px", marginY: 1 }}
+                    onChange={(e) => {
+                      const value = parseInt(JSON.parse(e.target.value).price);
+                      const name = JSON.parse(e.target.value).title;
+                      console.log(e.target.value);
+                      this.setState((oldState) => ({
+                        ...oldState,
+                        dodaciJelu: [...oldState.dodaciJelu, { name, cost: value }],
+                        totalPrice: oldState.totalPrice + value,
+                      }));
+                    }}
+                    placeholder="Dodatci"
+                  >
+                    <option value="" sx={{ width: "100%" }}>
+                      Dodaci
+                    </option>
+                    {dodaci &&
+                      dodaci.items.map((item, index) => (
+                        <option key={item.title} value={JSON.stringify(item)} name={item.title}>
+                          {item.title}: {item.price}din
+                        </option>
+                      ))}
+                  </Select>
+                )}
+              </Fragment>
+            )}
             {selectedMeat && (
               <h4 sx={{ textTransform: "capitalize", margin: 1 }}>{selectedMeat}</h4>
             )}
             {orderSize && (
               <h4 sx={{ textTransform: "capitalize", margin: 1 }}>
                 {orderSize === "small" ? "mala porcija" : "standard porcija"}:{" "}
-                {prices[selectedMeat][orderSize]}din
+                {prices && prices[selectedMeat] && prices[selectedMeat][orderSize]
+                  ? prices[selectedMeat][orderSize]
+                  : price[orderSize]}
+                din
               </h4>
             )}
             {dodaciJelu &&

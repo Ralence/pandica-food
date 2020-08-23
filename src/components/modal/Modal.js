@@ -210,7 +210,7 @@ class Modal extends Component {
                         </option>
                         {dodaci &&
                           dodaci.items.map((item, index) => (
-                            <option value={JSON.stringify(item)} name={item.title}>
+                            <option key={item.title} value={JSON.stringify(item)} name={item.title}>
                               {item.title}: {item.price}din
                             </option>
                           ))}
@@ -238,7 +238,7 @@ class Modal extends Component {
                       </option>
                       {dodaci &&
                         dodaci.items.map((item, index) => (
-                          <option value={JSON.stringify(item)} name={item.title}>
+                          <option key={item.title} value={JSON.stringify(item)} name={item.title}>
                             {item.title}: {item.price}din
                           </option>
                         ))}
@@ -257,8 +257,8 @@ class Modal extends Component {
               </h4>
             )}
             {dodaciJelu &&
-              dodaciJelu.map((dodatak) => (
-                <h4 sx={{ textTransform: "capitalize", margin: 1 }}>
+              dodaciJelu.map((dodatak, index) => (
+                <h4 key={dodatak.name + index} sx={{ textTransform: "capitalize", margin: 1 }}>
                   + {dodatak.name}: {dodatak.cost}din
                 </h4>
               ))}

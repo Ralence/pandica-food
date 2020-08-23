@@ -56,7 +56,7 @@ const Modal = styled.div`
     .box-header {
       padding: 8px 24px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       border-bottom: 1px solid #c7c7c7;
       .box-title {

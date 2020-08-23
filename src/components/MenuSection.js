@@ -100,6 +100,7 @@ const MenuSection = ({ title, image, description, items, meats }) => {
           items.map((item) => (
             <MenuItem
               key={item.title}
+              section={title}
               className="menu_item"
               item={item}
               meats={meats ? meats : null}

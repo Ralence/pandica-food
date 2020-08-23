@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import React, { Component } from "react";
-
+import React, { Component, Fragment } from "react";
+import theme from "../../../theme";
 import { jsx, Box, Card, Text, Image, Button, Close, Label, Checkbox } from "theme-ui";
 
 // styled
@@ -13,13 +13,17 @@ class Modal extends Component {
     modalSize: "md",
   };
 
-  state = { fadeType: null };
+  state = { fadeType: null, totalPrice: 0 };
 
   background = React.createRef();
 
   componentDidMount() {
+    const { item, section } = this.props;
     window.addEventListener("keydown", this.onEscKeyDown, false);
     setTimeout(() => this.setState({ fadeType: "in" }), 0);
+    if (item.price && item.price.standard && !item.price.small) {
+      this.setState({ totalPrice: item.price.standard });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,7 +55,10 @@ class Modal extends Component {
   };
 
   render() {
-    const { title } = this.props.item;
+    const { title, price, prices } = this.props.item;
+    const { section } = this.props;
+    const { totalPrice } = this.state;
+
     return (
       <StyledModal
         id={this.props.id}
@@ -74,12 +81,19 @@ class Modal extends Component {
               backgroundImage: "url(/pandicaBanner.jpg)",
               backgroundPosition: "center",
               height: "90px",
+              justifyContent: "flex-end",
             }}
           >
             <Close
               onClick={this.handleClick}
               className="close"
-              sx={{ width: "40px", minWidth: "40px" }}
+              sx={{
+                width: "40px",
+                minWidth: "40px",
+                alignSelf: "flex-start",
+                backgroundColor: "#fff",
+                border: `2px solid ${theme.colors.primary}`,
+              }}
             ></Close>
           </div>
           <div className="box-content" sx={{ paddingTop: 0 }}>
@@ -94,7 +108,24 @@ class Modal extends Component {
             >
               {title}
             </h2>
-            {this.props.children}
+            <div
+              sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              {price && price.standard && !price.small && (
+                <Fragment>
+                  <Text sx={{ fontWeight: "bold", color: "gray" }}>Cena</Text>
+                  <Text sx={{ fontWeight: "bold", color: "secondary" }}>{price.standard}</Text>
+                </Fragment>
+              )}
+            </div>
+            <Text sx={{ fontWeight: "bold", color: "gray" }}>
+              Ukupno: <span sx={{ fontWeight: "bold", color: "secondary" }}>{totalPrice}din</span>
+            </Text>
           </div>
 
           <div className="box-footer">

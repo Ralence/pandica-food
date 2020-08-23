@@ -11,7 +11,6 @@ import fs from "fs";
 import path from "path";
 
 const menu = ({ menu }) => {
-  useEffect(() => console.log(menu), []);
   return (
     <Fragment>
       <ImgBanner image={"/chopstick.jpg"} alt="chopsticks and bowl of noodles" />

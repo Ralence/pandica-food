@@ -7,7 +7,7 @@ import Modal from "./modal/Modal";
 import theme from "../../theme";
 import styled from "@emotion/styled";
 
-const MenuItem = ({ item, meats }) => {
+const MenuItem = ({ item, meats, section }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <Box
@@ -62,7 +62,7 @@ const MenuItem = ({ item, meats }) => {
           marginLeft: "auto",
         }}
       >
-        {item && item.price && item.price.length === 1 && (
+        {item && item.price && (
           <Text
             sx={{
               fontSize: 2,
@@ -76,17 +76,24 @@ const MenuItem = ({ item, meats }) => {
               justifyContent: "flex-end",
             }}
           >
-            <span sx={{ color: theme.colors.secondary }}>{item.price}Din</span>
+            <span sx={{ color: theme.colors.secondary }}>
+              {item.price.small && item.price.small + "/"}
+              {item.price.standard}Din
+            </span>
           </Text>
         )}
       </Box>
       {meats && (
         <Box>
-          {meats.map((meat, index) => (
-            <Text key={item.title + meat} sx={{ color: "text", fontWeight: "bold" }}>
-              {meat}: {item.price[index]}
-            </Text>
-          ))}
+          <Text sx={{ color: "text", fontWeight: "bold" }}>
+            Piletina: {item.prices.piletina.small}/{item.prices.piletina.standard}
+          </Text>
+          <Text sx={{ color: "text", fontWeight: "bold" }}>
+            Teletina: {item.prices.teletina.small}/{item.prices.teletina.standard}
+          </Text>
+          <Text sx={{ color: "text", fontWeight: "bold" }}>
+            Svinjatina: {item.prices.svinjetina.small}/{item.prices.svinjetina.standard}
+          </Text>
         </Box>
       )}
 
@@ -100,7 +107,7 @@ const MenuItem = ({ item, meats }) => {
       >
         Dodaj u korpu
       </Button>
-      {showModal && <Modal onClose={() => setShowModal(false)} item={item} />}
+      {showModal && <Modal onClose={() => setShowModal(false)} item={item} section={section} />}
     </Box>
   );
 };

@@ -50,6 +50,13 @@ const Modal = styled.div`
     border-radius: 5px;
     background-color: #fefefe;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
     .box-content {
       padding: 24px;
       padding-top: 0;

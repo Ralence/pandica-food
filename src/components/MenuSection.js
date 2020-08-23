@@ -15,7 +15,7 @@ const MainArea = styled.div`
   border: 1px solid gray;
 `;
 
-const MenuSection = ({ title, image, description, items, meats }) => {
+const MenuSection = ({ title, image, description, items, meats, dodaci }) => {
   const [expand, setExpand] = useState(false);
 
   return (
@@ -104,6 +104,7 @@ const MenuSection = ({ title, image, description, items, meats }) => {
               className="menu_item"
               item={item}
               meats={meats ? meats : null}
+              dodaci={dodaci}
             />
           ))}
       </MainArea>

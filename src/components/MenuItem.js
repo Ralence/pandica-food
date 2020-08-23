@@ -7,7 +7,7 @@ import Modal from "./modal/Modal";
 import theme from "../../theme";
 import styled from "@emotion/styled";
 
-const MenuItem = ({ item, meats, section }) => {
+const MenuItem = ({ item, meats, section, dodaci }) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <Box
@@ -107,7 +107,9 @@ const MenuItem = ({ item, meats, section }) => {
       >
         Dodaj u korpu
       </Button>
-      {showModal && <Modal onClose={() => setShowModal(false)} item={item} section={section} />}
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)} item={item} section={section} dodaci={dodaci} />
+      )}
     </Box>
   );
 };

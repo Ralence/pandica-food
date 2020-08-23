@@ -45,6 +45,8 @@ const Modal = styled.div`
     z-index: 1050;
     width: 90%;
     max-width: 800px;
+    max-height: 100vh;
+    overflow: scroll;
     border-radius: 5px;
     background-color: #fefefe;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);

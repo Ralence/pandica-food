@@ -35,6 +35,7 @@ const Menu = ({ menu }) => {
           items={menu.glavna_jela.items}
           description={menu.glavna_jela.description}
           meats={menu.glavna_jela.meats}
+          dodaci={menu.dodaci}
         />
       )}
       {menu && menu.specijalni_meni && (
@@ -43,6 +44,7 @@ const Menu = ({ menu }) => {
           title={menu.specijalni_meni.title}
           items={menu.specijalni_meni.items}
           description={menu.specijalni_meni.description}
+          dodaci={menu.dodaci}
         />
       )}
       {menu && menu.vegetarijanski_meni && (
@@ -51,6 +53,7 @@ const Menu = ({ menu }) => {
           title={menu.vegetarijanski_meni.title}
           items={menu.vegetarijanski_meni.items}
           description={menu.vegetarijanski_meni.description}
+          dodaci={menu.dodaci}
         />
       )}
       {menu && menu.salate && (

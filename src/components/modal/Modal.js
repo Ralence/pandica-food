@@ -14,9 +14,14 @@ import {
   Select,
   Radio,
 } from "theme-ui";
+import { connect } from "react-redux";
+import { withRouter } from "next/router";
 
 // styled
 import StyledModal from "./StyledModal.js";
+
+import { addToCart } from "../../../store/actions/cart";
+import { FaRegCaretSquareRight } from "react-icons/fa";
 
 class Modal extends Component {
   static defaultProps = {
@@ -66,9 +71,28 @@ class Modal extends Component {
     this.setState({ fadeType: "out" });
   };
 
+  handleAddToCart = () => {
+    const { router, dispatch } = this.props;
+    const { totalPrice, selectedMeat, orderSize, dodaciJelu } = this.state;
+    if (!totalPrice) {
+      alert("Molimo dovršite porudžbinu");
+      return;
+    }
+
+    const newOrder = {
+      title: this.props.item.title,
+      selectedMeat,
+      orderSize,
+      dodaciJelu,
+      totalPrice,
+    };
+    dispatch(addToCart(newOrder));
+    router.push("/cart");
+  };
+
   render() {
     const { title, price, prices } = this.props.item;
-    const { section, dodaci } = this.props;
+    const { section, dodaci, dispatch, router } = this.props;
     const { totalPrice, selectedMeat, orderSize, dodaciJelu } = this.state;
 
     return (
@@ -355,7 +379,13 @@ class Modal extends Component {
           </div>
 
           <div className="box-footer">
-            <Button onClick={() => {}} className="close" sx={{ margin: "5px" }}>
+            <Button
+              onClick={() => {
+                this.handleAddToCart();
+              }}
+              className="close"
+              sx={{ margin: "5px" }}
+            >
               U korpu
             </Button>
           </div>
@@ -366,4 +396,6 @@ class Modal extends Component {
   }
 }
 
-export default Modal;
+const ModalWithRouter = withRouter(Modal);
+
+export default connect()(ModalWithRouter);

@@ -73,6 +73,7 @@ class Modal extends Component {
 
   handleAddToCart = () => {
     const { router, dispatch } = this.props;
+    const { prices, price } = this.props.item;
     const { totalPrice, selectedMeat, orderSize, dodaciJelu } = this.state;
     if (!totalPrice) {
       alert("Molimo dovršite porudžbinu");
@@ -80,9 +81,16 @@ class Modal extends Component {
     }
 
     const newOrder = {
+      orderItem: this.props.item,
       title: this.props.item.title,
       selectedMeat,
-      orderSize,
+      orderSize: {
+        name: orderSize,
+        price:
+          prices && prices[selectedMeat] && prices[selectedMeat][orderSize]
+            ? prices[selectedMeat][orderSize]
+            : price[orderSize],
+      },
       dodaciJelu,
       totalPrice,
     };

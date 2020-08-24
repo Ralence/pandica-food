@@ -87,17 +87,18 @@ const PhoneIcon = styled(AiOutlinePhone)`
 `;
 
 const AppTop = () => {
-  let isWeekend;
+  let [isWeekend, setIsWeekend] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const today = new Date();
     if (today.getDay() == 6 || today.getDay() == 0) {
-      isWeekend = true;
+      setIsWeekend(true);
     } else {
-      isWeekend = false;
+      setIsWeekend(false);
     }
   }, []);
 
-  const isOpen = () => {
+  const isOpenNow = () => {
     const today = new Date();
     const hour = today.getHours();
     return isWeekend && hour > 12 && hour < 23
@@ -106,6 +107,11 @@ const AppTop = () => {
       ? true
       : false;
   };
+
+  useEffect(() => {
+    setIsOpen(isOpenNow());
+  }, [isWeekend, isOpenNow]);
+
   return (
     <TopBar>
       <Section>
@@ -124,8 +130,8 @@ const AppTop = () => {
             width: "10px",
             height: "10px",
             borderRadius: "50%",
-            backgroundColor: isOpen() ? "green" : "red",
-            animation: `${!isOpen() ? red : green} 1.5s linear infinite`,
+            backgroundColor: isOpen ? "green" : "red",
+            animation: `${!isOpen ? red : green} 1.5s linear infinite`,
           }}
         ></div>
         {isWeekend ? "12:00 - 23:00" : "10:00 - 23:00"}

@@ -1,7 +1,7 @@
 import { createWrapper, HYDRATE } from "next-redux-wrapper";
 import { ADD_TO_CART } from "../actions/cart";
 
-const initialState = { cart: ["hi from cart state"] };
+const initialState = { cart: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

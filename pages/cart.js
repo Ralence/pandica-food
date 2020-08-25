@@ -41,6 +41,7 @@ const cart = () => {
       </h2>
       <h3>+381 061 14 33 418</h3>
       <h3>+381 061 14 33 419</h3>
+      <MainBrandArea title="Korpa" subTitle="Sadržaj vaše korpe:" />
       <Flex
         as="nav"
         sx={{

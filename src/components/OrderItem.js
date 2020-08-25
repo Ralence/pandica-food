@@ -15,8 +15,12 @@ import {
 import React, { Fragment } from "react";
 import { uid } from "react-uid";
 
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "../../store/actions/cart";
+
 const OrderItem = ({ cartItem }) => {
   const { orderItem, title, selectedMeat, orderSize, dodaciJelu, totalPrice } = cartItem;
+  const dispatch = useDispatch();
   return (
     <Card
       key={uid(title)}
@@ -79,9 +83,21 @@ const OrderItem = ({ cartItem }) => {
           </Text>
         </div>
 
-        <div className="box-footer">
-          <Button onClick={() => {}} className="close" sx={{ margin: "5px" }}>
-            Izmeni
+        <div className="box-footer" sx={{ display: "flex" }}>
+          <Button
+            onClick={() => dispatch(removeFromCart(cartItem))}
+            className="close"
+            sx={{
+              margin: "5px",
+              alignSelf: "flex-end",
+              marginLeft: "auto",
+              marginRight: "10px",
+              backgroundColor: "muted",
+              color: "gray",
+              fontWeight: "bold",
+            }}
+          >
+            Izbaci iz korpe
           </Button>
         </div>
       </div>

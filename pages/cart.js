@@ -16,7 +16,7 @@ import {
 } from "theme-ui";
 import { useRouter } from "next/router";
 import React, { Fragment } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { uid } from "react-uid";
 
 import MainBrandArea from "../src/components/MainBrandArea";
@@ -26,6 +26,8 @@ import OrderItem from "../src/components/OrderItem";
 
 const cart = () => {
   const { cart } = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
 
   const router = useRouter();
 
@@ -54,7 +56,7 @@ const cart = () => {
           textTransform: "uppercase",
         }}
       >
-        <NavLink href="#!" p={2}>
+        <NavLink href="#!" active p={2}>
           Trenutni sadržaj korpe
         </NavLink>
         <NavLink href="#!" p={2}>
@@ -63,9 +65,12 @@ const cart = () => {
       </Flex>
 
       {cart.length > 0 ? (
-        cart.map((cartItem, index) => {
-          return <OrderItem key={uid(cartItem)} cartItem={cartItem} />;
-        })
+        <Fragment>
+          {cart.map((cartItem, index) => {
+            return <OrderItem key={uid(cartItem)} cartItem={cartItem} />;
+          })}
+          <Button sx={{ width: "95%", maxWidth: "700px", cursor: "pointer" }}>Poruči!</Button>
+        </Fragment>
       ) : (
         <Card
           sx={{
@@ -106,7 +111,7 @@ const cart = () => {
                   router.push("/menu");
                 }}
                 className="close"
-                sx={{ margin: "5px", width: "100%" }}
+                sx={{ margin: "5px", width: "100%", cursor: "pointer" }}
               >
                 Dopuni Korpu!
               </Button>

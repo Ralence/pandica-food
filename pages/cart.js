@@ -6,6 +6,8 @@ import {
   Text,
   Image,
   Button,
+  Flex,
+  NavLink,
   Close,
   Label,
   Checkbox,
@@ -37,7 +39,28 @@ const cart = () => {
       </h2>
       <h3>+381 061 14 33 418</h3>
       <h3>+381 061 14 33 419</h3>
-      <MainBrandArea title="Vaša Korpa" subTitle="Trenutni sadržaj korpe:" />
+      <Flex
+        as="nav"
+        sx={{
+          variant: "containers.card",
+          paddingY: "10px",
+
+          margin: 2,
+          backgroundColor: "background",
+          width: "95%",
+          maxWidth: "700px",
+          justifyContent: "space-around",
+          alignItems: "center",
+          textTransform: "uppercase",
+        }}
+      >
+        <NavLink href="#!" p={2}>
+          Trenutni sadržaj korpe
+        </NavLink>
+        <NavLink href="#!" p={2}>
+          Prethodne porudžbine
+        </NavLink>
+      </Flex>
 
       {cart.length > 0 ? (
         cart.map((cartItem, index) => {

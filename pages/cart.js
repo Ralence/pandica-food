@@ -70,6 +70,22 @@ const cart = () => {
             return <OrderItem key={uid(cartItem)} cartItem={cartItem} />;
           })}
           <Button sx={{ width: "95%", maxWidth: "700px", cursor: "pointer" }}>Poruči!</Button>
+          <Button
+            onClick={() => {
+              router.push("/menu");
+            }}
+            className="close"
+            sx={{
+              margin: "5px",
+              width: "100%",
+              backgroundColor: "gray",
+              width: "95%",
+              maxWidth: "700px",
+              cursor: "pointer",
+            }}
+          >
+            Dopuni Korpu!
+          </Button>
         </Fragment>
       ) : (
         <Card
@@ -111,7 +127,7 @@ const cart = () => {
                   router.push("/menu");
                 }}
                 className="close"
-                sx={{ margin: "5px", width: "100%", cursor: "pointer" }}
+                sx={{ margin: "5px", width: "100%", cursor: "pointer", backgroundColor: "gray" }}
               >
                 Dopuni Korpu!
               </Button>

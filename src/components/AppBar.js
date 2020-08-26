@@ -159,6 +159,7 @@ export default function ProminentAppBar() {
                     border: "2px solid",
                     fontWeight: "bold",
                     borderRadius: "5px",
+                    display: cart.length ? "inline-block" : "none",
                     "@media screen and (min-width: 651px)": {
                       display: "none",
                     },
@@ -256,6 +257,7 @@ export default function ProminentAppBar() {
               border: "2px solid",
               fontWeight: "bold",
               borderRadius: "5px",
+              display: cart.length ? "inline-block" : "none",
               "@media screen and (max-width: 650px)": {
                 display: "none",
               },

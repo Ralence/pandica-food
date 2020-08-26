@@ -3,7 +3,8 @@ import { Fragment, useState, useEffect } from "react";
 import { jsx } from "theme-ui";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Button, Close, MenuButton } from "theme-ui";
+import { useSelector } from "react-redux";
+import { Button, Close, MenuButton, Badge } from "theme-ui";
 import { FaStore, FaListAlt, FaShoppingCart } from "react-icons/fa";
 
 import styled from "@emotion/styled";
@@ -77,6 +78,7 @@ const NavLink = styled.a`
 
 export default function ProminentAppBar() {
   const [menuOpened, setMenuOpened] = useState(false);
+  const cart = useSelector((state) => state.cart.cart);
 
   const router = useRouter();
 
@@ -149,10 +151,26 @@ export default function ProminentAppBar() {
                   },
                 }}
               >
+                <Badge
+                  ml={-3}
+                  mt={-3}
+                  sx={{
+                    marginRight: 1,
+                    border: "2px solid",
+                    fontWeight: "bold",
+                    borderRadius: "5px",
+                    "@media screen and (min-width: 651px)": {
+                      display: "none",
+                    },
+                  }}
+                >
+                  {cart.length}
+                </Badge>
                 <FaShoppingCart sx={{ marginRight: "5px", color: (theme) => theme.colors.gray }} />
                 KORPA
               </NavLink>
             </Link>
+
             <Link href="/cart">
               <NavLink
                 sx={{
@@ -230,6 +248,22 @@ export default function ProminentAppBar() {
               KORPA
             </NavLink>
           </Link>
+          <Badge
+            ml={-3}
+            mt={-3}
+            sx={{
+              marginRight: 1,
+              border: "2px solid",
+              fontWeight: "bold",
+              borderRadius: "5px",
+              "@media screen and (max-width: 650px)": {
+                display: "none",
+              },
+            }}
+          >
+            {cart.length}
+          </Badge>
+
           <Link href="/cart">
             <NavLink>
               <Button

@@ -15,7 +15,7 @@ import {
   Radio,
 } from "theme-ui";
 import { useRouter } from "next/router";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { uid } from "react-uid";
 
@@ -26,10 +26,20 @@ import OrderItem from "../src/components/OrderItem";
 
 const cart = () => {
   const { cart } = useSelector((state) => state.cart);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const dispatch = useDispatch();
 
   const router = useRouter();
+
+  const calculateTotal = useCallback(() => {
+    const sum = cart.reduce((acc, item) => acc + parseInt(item.totalPrice), 0);
+    setTotalPrice(sum);
+  }, [cart]);
+
+  useEffect(() => {
+    calculateTotal();
+  }, [cart]);
 
   return (
     <Fragment>
@@ -41,9 +51,8 @@ const cart = () => {
       </h2>
       <h3>+381 061 14 33 418</h3>
       <h3>+381 061 14 33 419</h3>
-      <MainBrandArea title="Korpa" subTitle="Sadržaj vaše korpe:" />
+      <MainBrandArea title="Korpa" />
       <Flex
-        as="nav"
         sx={{
           variant: "containers.card",
           paddingY: "10px",
@@ -57,12 +66,9 @@ const cart = () => {
           textTransform: "uppercase",
         }}
       >
-        <NavLink href="#!" active p={2}>
+        <Text p={2} sx={{ fontSize: 4, fontWeight: "bold" }}>
           Trenutni sadržaj korpe
-        </NavLink>
-        <NavLink href="#!" p={2}>
-          Prethodne porudžbine
-        </NavLink>
+        </Text>
       </Flex>
 
       {cart.length > 0 ? (
@@ -70,6 +76,30 @@ const cart = () => {
           {cart.map((cartItem, index) => {
             return <OrderItem key={uid(cartItem)} cartItem={cartItem} />;
           })}
+          <Flex
+            sx={{
+              variant: "containers.card",
+              paddingY: "10px",
+
+              margin: 2,
+              backgroundColor: "background",
+              width: "95%",
+              maxWidth: "700px",
+              justifyContent: "space-around",
+              alignItems: "center",
+              textTransform: "uppercase",
+            }}
+          >
+            <Text p={2} sx={{ fontSize: 4, fontWeight: "bold" }}>
+              Ukupna cena:
+            </Text>
+            <Text
+              p={2}
+              sx={{ fontSize: 4, fontWeight: "bold", color: "primary", textTransform: "lowercase" }}
+            >
+              {totalPrice}din
+            </Text>
+          </Flex>
           <Button sx={{ width: "95%", maxWidth: "700px", cursor: "pointer" }}>Poruči!</Button>
           <Button
             onClick={() => {

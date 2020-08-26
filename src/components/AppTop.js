@@ -119,7 +119,7 @@ const AppTop = () => {
         <a href="https://www.facebook.com/" target="_blank">
           <FbIcon />{" "}
         </a>
-        <a href="https://www.instagram.com" target="_blank">
+        <a href="https://www.instagram.com/pandicafood/" target="_blank">
           <InstaIcon />
         </a>
       </Section>

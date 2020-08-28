@@ -13,7 +13,7 @@ const ImgBanner = ({ image, alt }) => {
         "@media screen and (max-width: 650px)": {
           height: "200px",
         },
-        height: "250px",
+        height: "170px",
         objectFit: "cover",
       }}
     ></img>

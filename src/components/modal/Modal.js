@@ -16,7 +16,7 @@ import {
 } from "theme-ui";
 import { connect } from "react-redux";
 import { withRouter } from "next/router";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 // styled
 import StyledModal from "./StyledModal.js";

@@ -1,10 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import { useState, useEffect } from "react";
 
 import Head from "next/head";
 import AppBar from "../src/components/AppBar";
 import TopBar from "../src/components/AppTop";
 import AppFooter from "../src/components/AppFooter";
+
+import { useDispatch } from "react-redux";
+import { setCartFromLocal } from "../store/actions/cart";
 
 import { wrapper } from "../store/index";
 
@@ -26,6 +30,22 @@ const AppContainer = styled.div`
 `;
 
 function MyApp({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (loading) {
+      const localCart = localStorage.getItem("cart");
+      let parsed = [];
+      if (localCart) {
+        parsed = JSON.parse(localCart);
+        dispatch(setCartFromLocal(parsed));
+        setLoading(false);
+      }
+    }
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <AppContainer sx={{ backgroundColor: theme.colors.mainBackground }}>

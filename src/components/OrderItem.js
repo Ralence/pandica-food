@@ -21,6 +21,11 @@ import { removeFromCart } from "../../store/actions/cart";
 const OrderItem = ({ cartItem }) => {
   const { orderItem, title, selectedMeat, orderSize, dodaciJelu, totalPrice } = cartItem;
   const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+
   return (
     <Card
       key={uid(title)}
@@ -85,7 +90,7 @@ const OrderItem = ({ cartItem }) => {
 
         <div className="box-footer" sx={{ display: "flex" }}>
           <Button
-            onClick={() => dispatch(removeFromCart(cartItem))}
+            onClick={() => handleRemoveFromCart(cartItem)}
             className="close"
             sx={{
               margin: "5px",

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import MainBrandArea from "../src/components/MainBrandArea";
 import ImgBanner from "../src/components/ImgBanner";

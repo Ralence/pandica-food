@@ -1,5 +1,5 @@
 import { createWrapper, HYDRATE } from "next-redux-wrapper";
-import { ADD_TO_CART, REMOVE_TO_CART } from "../actions/cart";
+import { ADD_TO_CART, REMOVE_TO_CART, SET_CART_FROM_LOCAL_STORAGE } from "../actions/cart";
 
 const initialState = { cart: [] };
 
@@ -8,6 +8,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...payload };
+    case SET_CART_FROM_LOCAL_STORAGE:
+      return { ...state, cart: [...payload] };
     case ADD_TO_CART:
       return {
         ...state,

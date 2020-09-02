@@ -79,6 +79,16 @@ class Modal extends Component {
     this.setState({ fadeType: "out" });
   };
 
+  addToLocalStorage = (item) => {
+    const localSCart = localStorage.getItem("cart");
+    let parsed = [];
+    if (localSCart) {
+      parsed = JSON.parse(localSCart);
+    }
+    parsed.push(item);
+    localStorage.setItem("cart", JSON.stringify(parsed));
+  };
+
   handleAddToCart = () => {
     const { router, dispatch } = this.props;
     const { prices, price } = this.props.item;
@@ -105,6 +115,8 @@ class Modal extends Component {
       totalPrice,
     };
     dispatch(addToCart(newOrder));
+
+    this.addToLocalStorage(newOrder);
     this.setState({ itemAdded: true });
   };
 

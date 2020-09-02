@@ -16,6 +16,7 @@ import {
 } from "theme-ui";
 import { connect } from "react-redux";
 import { withRouter } from "next/router";
+import { uuid } from "uuidv4";
 
 // styled
 import StyledModal from "./StyledModal.js";
@@ -30,7 +31,14 @@ class Modal extends Component {
     modalSize: "md",
   };
 
-  state = { fadeType: null, totalPrice: 0, selectedMeat: null, orderSize: null, dodaciJelu: [] };
+  state = {
+    fadeType: null,
+    totalPrice: 0,
+    selectedMeat: null,
+    orderSize: null,
+    dodaciJelu: [],
+    itemAdded: false,
+  };
 
   background = React.createRef();
 
@@ -75,6 +83,7 @@ class Modal extends Component {
     const { router, dispatch } = this.props;
     const { prices, price } = this.props.item;
     const { totalPrice, selectedMeat, orderSize, dodaciJelu } = this.state;
+
     if (!totalPrice) {
       alert("Molimo dovršite porudžbinu");
       return;
@@ -82,6 +91,7 @@ class Modal extends Component {
 
     const newOrder = {
       orderItem: this.props.item,
+      id: uuid(),
       title: this.props.item.title,
       selectedMeat,
       orderSize: {
@@ -95,13 +105,13 @@ class Modal extends Component {
       totalPrice,
     };
     dispatch(addToCart(newOrder));
-    router.push("/cart");
+    this.setState({ itemAdded: true });
   };
 
   render() {
     const { title, price, prices } = this.props.item;
     const { section, dodaci, dispatch, router } = this.props;
-    const { totalPrice, selectedMeat, orderSize, dodaciJelu } = this.state;
+    const { totalPrice, selectedMeat, orderSize, dodaciJelu, itemAdded } = this.state;
 
     return (
       <StyledModal
@@ -386,16 +396,63 @@ class Modal extends Component {
             </Text>
           </div>
 
-          <div className="box-footer">
-            <Button
-              onClick={() => {
-                this.handleAddToCart();
-              }}
-              className="close"
-              sx={{ margin: "5px" }}
-            >
-              U korpu
-            </Button>
+          <div
+            className="box-footer"
+            sx={{
+              "@media screen and (max-width: 450px)": {
+                flexDirection: "column",
+                alignItems: "center",
+              },
+            }}
+          >
+            {itemAdded ? (
+              <Fragment>
+                <Button
+                  onClick={() => router.push("/cart")}
+                  sx={{
+                    margin: "5px",
+                    alignSelf: "flex-end",
+                    marginLeft: "auto",
+                    marginRight: "10px",
+                    backgroundColor: "muted",
+                    color: "gray",
+                    fontWeight: "bold",
+                    "@media screen and (max-width: 450px)": {
+                      alignSelf: "center",
+                      margin: "auto",
+                      marginY: 1,
+                      width: "100%",
+                    },
+                  }}
+                >
+                  Pogledaj Korpu
+                </Button>
+                <Button
+                  onClick={this.handleClick}
+                  sx={{
+                    bg: "gray",
+                    "@media screen and (max-width: 450px)": {
+                      alignSelf: "center",
+                      margin: "auto",
+                      marginY: 1,
+                      width: "100%",
+                    },
+                  }}
+                >
+                  Nastavi Kupovinu
+                </Button>
+              </Fragment>
+            ) : (
+              <Button
+                onClick={() => {
+                  this.handleAddToCart();
+                }}
+                className="close"
+                sx={{ margin: "5px" }}
+              >
+                U korpu
+              </Button>
+            )}
           </div>
         </Box>
         <div className={`background`} onMouseDown={this.handleClick} ref={this.background} />

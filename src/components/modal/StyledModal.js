@@ -92,7 +92,7 @@ const Modal = styled.div`
       height: auto;
     }
     .box-footer {
-      height: 48px;
+      height: fit-content;
       padding: 0px 24px;
       display: flex;
       align-items: center;

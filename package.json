@@ -19,6 +19,7 @@
     "react-redux": "^7.2.1",
     "react-uid": "^2.3.0",
     "redux": "^4.0.5",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "uuidv4": "^6.2.3"
   }
 }

@@ -16,10 +16,7 @@ const reducer = (state = initialState, action) => {
     case REMOVE_TO_CART:
       return {
         ...state,
-        cart: state.cart.filter(
-          (cartItem) =>
-            cartItem.title !== payload.title && cartItem.totalPrice !== payload.totalPrice
-        ),
+        cart: state.cart.filter((cartItem) => cartItem.id !== payload.id),
       };
     default:
       return state;

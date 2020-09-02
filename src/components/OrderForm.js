@@ -34,7 +34,7 @@ const OrderForm = () => {
         maxWidth: "700px",
         justifyContent: "space-around",
         alignItems: "center",
-        textTransform: "uppercase",
+        fontWeight: "bold",
       }}
     >
       <Box as="form" onSubmit={(e) => e.preventDefault()}>
@@ -49,7 +49,6 @@ const OrderForm = () => {
             maxWidth: "700px",
             justifyContent: "space-around",
             alignItems: "center",
-            textTransform: "uppercase",
             marginX: "auto",
           }}
         >

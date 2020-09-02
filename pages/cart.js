@@ -23,6 +23,7 @@ import MainBrandArea from "../src/components/MainBrandArea";
 
 import ImgBanner from "../src/components/ImgBanner";
 import OrderItem from "../src/components/OrderItem";
+import OrderForm from "../src/components/OrderForm";
 
 const cart = () => {
   const { cart } = useSelector((state) => state.cart);
@@ -100,7 +101,6 @@ const cart = () => {
               {totalPrice}din
             </Text>
           </Flex>
-          <Button sx={{ width: "95%", maxWidth: "700px", cursor: "pointer" }}>Poruči!</Button>
           <Button
             onClick={() => {
               router.push("/menu");
@@ -166,6 +166,7 @@ const cart = () => {
           </div>
         </Card>
       )}
+      {cart.length > 0 && <OrderForm />}
     </Fragment>
   );
 };

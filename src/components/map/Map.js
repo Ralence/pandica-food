@@ -129,7 +129,7 @@ export default class MyMap extends Component {
             animate={true}
             ref={this.refmarker}
           >
-            <Popup>Pilota Mihaila Petrovića 11090 Rakovica 5a</Popup>
+            <Popup>Pilota Mihaila Petrovića 5a 11090 Rakovica</Popup>
           </Marker>
         </Map>
         <style jsx>

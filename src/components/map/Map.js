@@ -113,9 +113,12 @@ export default class MyMap extends Component {
         <Map
           center={position}
           zoom={this.state.zoom}
-          style={{
+          sx={{
             height: "400px",
             width: "100%",
+            "@media screen and (max-width: 450px)": {
+              height: "250px",
+            },
           }}
         >
           <TileLayer
@@ -138,10 +141,15 @@ export default class MyMap extends Component {
               height: 100%;
             }
             .leaflet-container {
-              height: 400px !important;
+              height: 400px;
               width: 80%;
               margin: 0 auto;
             }
+            @media screen and (max-width: 450px): {
+                .leaflet-container {
+                     height: "250px";
+                }
+              },
           `}
         </style>
       </div>

@@ -8,6 +8,12 @@ import Gallery from "../src/components/Gallery";
 import Recommendation from "../src/components/Recommend";
 import theme from "../theme";
 
+import dynamic from "next/dynamic";
+
+const MapWithNoSSR = dynamic(() => import("../src/components/map/Map"), {
+  ssr: false,
+});
+
 const index = () => {
   return (
     <Fragment>
@@ -31,6 +37,7 @@ const index = () => {
         </p>
       </MainBrandArea>
       <Recommendation />
+      <MapWithNoSSR />
       <Gallery />
     </Fragment>
   );

@@ -1,10 +1,18 @@
 /** @jsx jsx */
-import { jsx, Grid } from "theme-ui";
+import { jsx, Grid, Text, Flex } from "theme-ui";
 import { Fragment } from "react";
+import styled from "@emotion/styled";
 
-const Gallery = () => {
+import GalleryItem from "./GelleryItem";
+
+const Container = styled.div`
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.08'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+`;
+
+const Gallery = ({ images }) => {
   return (
-    <article
+    <Container
       sx={{
         width: "100%",
         maxWidth: "1200px",
@@ -12,53 +20,41 @@ const Gallery = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        boxSizing: "border-box",
       }}
     >
-      <h1 sx={{ fontWeight: "bold" }}>熊猫:真好吃!</h1>
-      <Grid
+      <h1
         sx={{
-          width: "100%",
-          height: "600px",
-          display: "grid",
-          gridTemplateAreas: "'first second' 'first third'",
-          gap: 0,
-          "@media screen and (max-width: 700px)": {
-            gridTemplateAreas: "'first' 'second' 'third'",
-          },
+          fontFamily: "cursive",
+          fontSize: 6,
+
+          marginTop: 5,
+          marginBottom: 0,
+          textAlign: "center",
+          lineHeight: "1em",
+          "@media screen and (max-width: 700px)": { fontSize: 5 },
         }}
       >
-        <img
-          src="/panda.jpg"
-          sx={{
-            width: "100%",
-            maxWidth: "100%",
-            height: "100%",
-            gridArea: "first",
-            objectFit: "cover",
-          }}
-        ></img>
-        <img
-          src="/panda1.jpg"
-          sx={{
-            width: "100%",
-            maxWidth: "100%",
-            height: "100%",
-            gridArea: "second",
-            objectFit: "cover",
-          }}
-        ></img>
-        <img
-          src="/panda2.jpg"
-          sx={{
-            width: "100%",
-            maxWidth: "100%",
-            height: "100%",
-            gridArea: "third",
-            objectFit: "cover",
-          }}
-        ></img>
-      </Grid>
-    </article>
+        Galerija
+      </h1>
+      <Text
+        sx={{
+          fontSize: 3,
+          fontWeight: 700,
+          textAlign: "center",
+          margin: 5,
+          marginTop: "1em",
+          color: "secondary",
+        }}
+      >
+        Pogledajte izbor fotografija hrane i enterijera
+      </Text>
+      <Flex sx={{ m: "30px", justifyContent: "space-around", flexWrap: "wrap" }}>
+        {images.map((image) => (
+          <GalleryItem image={image} />
+        ))}
+      </Flex>
+    </Container>
   );
 };
 

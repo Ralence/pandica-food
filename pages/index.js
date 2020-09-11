@@ -10,11 +10,14 @@ import theme from "../theme";
 
 import dynamic from "next/dynamic";
 
+import { fetchInstagramPhotos } from "../utils";
+
 const MapWithNoSSR = dynamic(() => import("../src/components/map/Map"), {
   ssr: false,
 });
 
-const index = () => {
+const index = ({ images }) => {
+  useEffect(() => console.log(images), []);
   return (
     <Fragment>
       <ImgBanner image={"/chef.jpg"} alt="chef with a wok" />
@@ -37,10 +40,35 @@ const index = () => {
         </p>
       </MainBrandArea>
       <Recommendation />
-      <MapWithNoSSR />
-      <Gallery />
+      <Gallery images={images} />
+      <div
+        sx={{
+          variant: "containers.card",
+          width: "100%",
+          maxWidth: "1200px",
+          padding: "15px",
+          padding: 0,
+          ".pointer": {
+            border: "1px solid gray",
+            borderRadius: "10px",
+            boxShadow: "3px 3px 3px gray",
+          },
+        }}
+      >
+        <MapWithNoSSR />
+      </div>
     </Fragment>
   );
 };
+
+export async function getStaticProps() {
+  const data = await fetchInstagramPhotos("https://www.instagram.com/pandicafood/");
+
+  return {
+    props: {
+      images: data,
+    },
+  };
+}
 
 export default index;

@@ -64,11 +64,27 @@ const Gallery = () => {
           fontWeight: 700,
           textAlign: "center",
           margin: 5,
+          marginBottom: 1,
           marginTop: "1em",
           color: "secondary",
         }}
       >
         Pogledajte izbor fotografija hrane i enterijera
+      </Text>
+      <Text p={2} sx={{ fontSize: 3, fontWeight: "bold" }}>
+        Za više fotografija posetite naš{" "}
+        <a
+          target="_blank"
+          href="https://www.instagram.com/pandicafood/"
+          sx={{
+            fontSize: 4,
+            fontFamily: "cursive",
+            color: "secondary",
+            textDecoration: "underline",
+          }}
+        >
+          Instagram profil
+        </a>
       </Text>
       <Flex sx={{ m: "30px", justifyContent: "space-around", flexWrap: "wrap" }}>
         {loading && <Spinner />}

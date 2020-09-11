@@ -2,6 +2,7 @@
 import { jsx, Grid, Text, Flex } from "theme-ui";
 import { Fragment } from "react";
 import styled from "@emotion/styled";
+import { uid } from "react-uid";
 
 import GalleryItem from "./GelleryItem";
 
@@ -51,7 +52,7 @@ const Gallery = ({ images }) => {
       </Text>
       <Flex sx={{ m: "30px", justifyContent: "space-around", flexWrap: "wrap" }}>
         {images.map((image) => (
-          <GalleryItem image={image} />
+          <GalleryItem key={uid(image)} image={image} />
         ))}
       </Flex>
     </Container>

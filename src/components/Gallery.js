@@ -71,7 +71,7 @@ const Gallery = () => {
       >
         Pogledajte izbor fotografija hrane i enterijera
       </Text>
-      <Text p={2} sx={{ fontSize: 3, fontWeight: "bold" }}>
+      <Text p={2} sx={{ fontSize: 3, fontWeight: "bold", padding: 2, textAlign: "center" }}>
         Za više fotografija posetite naš{" "}
         <a
           target="_blank"

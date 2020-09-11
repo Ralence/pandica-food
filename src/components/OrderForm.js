@@ -18,9 +18,11 @@ import {
   Select,
   Radio,
 } from "theme-ui";
+import { useForm, Controller } from "react-hook-form";
 
 const OrderForm = () => {
-  const [Name, setName] = useState("");
+  const { register, control, handleSubmit, watch, errors } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <Card
@@ -37,7 +39,7 @@ const OrderForm = () => {
         fontWeight: "bold",
       }}
     >
-      <Box as="form" onSubmit={(e) => e.preventDefault()}>
+      <Box as="form" onSubmit={handleSubmit(onSubmit)}>
         <Flex
           sx={{
             variant: "containers.card",
@@ -56,36 +58,55 @@ const OrderForm = () => {
             PODACI O DOSTAVI
           </Text>
         </Flex>
-        <Label htmlFor="username">Ime</Label>
-        <Input name="username" id="username" mb={3} />
 
-        <Label htmlFor="username">Kontakt telefon</Label>
-        <Input name="username" id="username" mb={3} />
+        <Label htmlFor="name">Ime</Label>
+        <Controller as={Input} name="name" control={control} defaultValue="" required />
 
-        <Label htmlFor="username">Email adresa</Label>
-        <Input name="username" id="username" mb={3} />
+        <Label htmlFor="phone">Kontakt telefon</Label>
+        <Controller as={Input} name="phone" control={control} defaultValue="" required />
 
-        <Label htmlFor="sound">Opština</Label>
-        <Select name="sound" id="sound" mb={3}>
-          <option>Beep</option>
+        <Label htmlFor="email">Email adresa</Label>
+        <Controller
+          type="email"
+          as={Input}
+          name="email"
+          control={control}
+          defaultValue=""
+          required
+        />
+
+        <Label htmlFor="municipality">Opština</Label>
+        <Controller
+          as={Select}
+          name="municipality"
+          control={control}
+          defaultValue="Rakovica"
+          required
+        >
+          <option>Rakovica</option>
           <option>Boop</option>
           <option>Blip</option>
-        </Select>
-        <Label htmlFor="username">Ulica Dostave (pun naziv)</Label>
-        <Input name="username" id="username" mb={3} />
-        <Label htmlFor="username">Broj</Label>
-        <Input name="username" id="username" mb={3} />
-        <Label htmlFor="sound">Tip Objekta</Label>
-        <Select name="sound" id="sound" mb={3}>
+        </Controller>
+
+        <Label htmlFor="street">Ulica Dostave (pun naziv)</Label>
+        <Controller as={Input} name="street" control={control} defaultValue="" required />
+
+        <Label htmlFor="number">Broj</Label>
+        <Controller as={Input} name="number" control={control} defaultValue="" required />
+
+        <Label htmlFor="objectType">Tip Objekta</Label>
+        <Controller as={Select} name="objectType" control={control} defaultValue="Stan" required>
           <option>Stan</option>
           <option>Kuća</option>
-        </Select>
-        <Label htmlFor="username">Interfon</Label>
-        <Input name="username" id="username" mb={3} />
-        <Label htmlFor="username">Sprat</Label>
-        <Input name="username" id="username" mb={3} />
-        <Label htmlFor="comment">Moguće Napomene za Dostavu</Label>
-        <Textarea name="comment" id="comment" rows="6" mb={3} />
+        </Controller>
+
+        <Label htmlFor="interfon">Interfon</Label>
+        <Controller as={Input} name="interfon" control={control} defaultValue="" />
+
+        <Label htmlFor="sprat">Sprat</Label>
+        <Controller as={Input} name="sprat" control={control} defaultValue="" required />
+        <Label htmlFor="notes">Moguće Napomene za Dostavu</Label>
+        <Controller as={Textarea} name="notes" rows="6" mb={3} control={control} defaultValue="" />
 
         <Box>
           <Label mb={3}>

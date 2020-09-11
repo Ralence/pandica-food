@@ -16,8 +16,7 @@ const MapWithNoSSR = dynamic(() => import("../src/components/map/Map"), {
   ssr: false,
 });
 
-const index = ({ images }) => {
-  useEffect(() => console.log(images), []);
+const index = () => {
   return (
     <Fragment>
       <ImgBanner image={"/chef.jpg"} alt="chef with a wok" />
@@ -40,7 +39,7 @@ const index = ({ images }) => {
         </p>
       </MainBrandArea>
       <Recommendation />
-      <Gallery images={images} />
+      <Gallery />
       <div
         sx={{
           variant: "containers.card",
@@ -61,14 +60,14 @@ const index = ({ images }) => {
   );
 };
 
-export async function getStaticProps() {
-  const data = await fetchInstagramPhotos("https://www.instagram.com/pandicafood/");
+// export async function getStaticProps() {
+//   const data = await fetchInstagramPhotos("https://www.instagram.com/pandicafood/");
 
-  return {
-    props: {
-      images: data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       images: data,
+//     },
+//   };
+// }
 
 export default index;

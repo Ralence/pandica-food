@@ -19,10 +19,30 @@ import {
   Radio,
 } from "theme-ui";
 import { useForm, Controller } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 const OrderForm = () => {
   const { register, control, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const order = useSelector((state) => state.cart);
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    const response = await fetch(`http://localhost:3000/api/order`, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      // mode: "cors", // no-cors, *cors, same-origin
+      // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify({ delivery_info: data, order: order }), // body data type must match "Content-Type" header
+    }).then((res) => res.json());
+    console.log("ordered", response); // parses JSON response into native JavaScript objects
+  };
 
   return (
     <Card

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+//////////////////////////////
+// Fetch Instagram pictures //
 const instagramRegExp = new RegExp(
   /<script type="text\/javascript">window\._sharedData = (.*);<\/script>/
 );
@@ -23,4 +25,28 @@ export const fetchInstagramPhotos = async (accountUrl) => {
     };
   });
   return photos;
+};
+
+////////////////////////////////
+// Create HTML email template //
+export const renderHTMLEmail = (receiver, food) => {
+  const html = `
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <title>Porudzbina</title>
+  </head>
+  <body>
+  
+  <h1>Porudzbina</h1>
+  <ul>
+    <li>Ime: ${receiver.name}</li>
+  </ul>
+  <p>This is a paragraph.</p>
+  
+  </body>
+  </html>
+  `;
+
+  return html;
 };

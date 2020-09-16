@@ -1,6 +1,8 @@
 import nc from "next-connect";
 var nodemailer = require("nodemailer");
 
+import { renderHTMLEmail } from "../../utils";
+
 var transporter = nodemailer.createTransport({
   service: "gmail",
   port: 587,
@@ -21,8 +23,9 @@ const handler = nc().post(async (req, res) => {
   var mailOptions = {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.EMAIL_ADDRESS,
-    subject: "Sending Email using Node.js",
+    subject: "Nova porudžbina sa sajta",
     text: JSON.stringify(order),
+    html: renderHTMLEmail(order.delivery_info, order.order),
   };
 
   transporter.sendMail(mailOptions, function (error, info) {

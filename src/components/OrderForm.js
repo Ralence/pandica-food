@@ -25,6 +25,7 @@ const OrderForm = () => {
   const { register, control, handleSubmit, watch, errors } = useForm();
 
   const order = useSelector((state) => state.cart);
+  console.log(order);
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -95,14 +96,8 @@ const OrderForm = () => {
           required
         />
 
-        <Label htmlFor="municipality">Opština</Label>
-        <Controller
-          as={Select}
-          name="municipality"
-          control={control}
-          defaultValue="Rakovica"
-          required
-        >
+        <Label htmlFor="opstina">Opština</Label>
+        <Controller as={Select} name="opstina" control={control} defaultValue="Rakovica" required>
           <option>Rakovica</option>
           <option>Boop</option>
           <option>Blip</option>

@@ -28,8 +28,7 @@ const OrderForm = () => {
   console.log(order);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    const response = await fetch(`http://localhost:3000/api/order`, {
+    const response = await fetch(`/api/order/`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       // mode: "cors", // no-cors, *cors, same-origin
       // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

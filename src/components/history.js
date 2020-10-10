@@ -19,11 +19,11 @@ import React, { Fragment, useEffect, useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { uid } from "react-uid";
 
-import MainBrandArea from "../src/components/MainBrandArea";
+import MainBrandArea from "./MainBrandArea";
 
-import ImgBanner from "../src/components/ImgBanner";
-import OrderItem from "../src/components/OrderItem";
-import OrderForm from "../src/components/OrderForm";
+import ImgBanner from "./ImgBanner";
+import OrderItem from "./OrderItem";
+import OrderForm from "./OrderForm";
 
 const cart = () => {
   const { history } = useSelector((state) => state.cart);

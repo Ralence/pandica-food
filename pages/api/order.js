@@ -30,10 +30,11 @@ const handler = nc().post(async (req, res) => {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      res.send({ error: error });
+      res.status(500).json({ error: error });
     } else {
-      console.log("Email sent: " + info.response);
-      res.send(JSON.stringify({ message: "Vaša porudžbina je uspešno prosleđena." }));
+      res.send(
+        JSON.stringify({ success: true, message: "Vaša porudžbina je uspešno prosleđena." })
+      );
     }
   });
 });

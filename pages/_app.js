@@ -8,7 +8,7 @@ import TopBar from "../src/components/AppTop";
 import AppFooter from "../src/components/AppFooter";
 
 import { useDispatch } from "react-redux";
-import { setCartFromLocal } from "../store/actions/cart";
+import { setCartFromLocal, setHistoryFromLocal } from "../store/actions/cart";
 
 import { wrapper } from "../store/index";
 
@@ -37,10 +37,20 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if (loading) {
       const localCart = localStorage.getItem("cart");
-      let parsed = [];
-      if (localCart) {
-        parsed = JSON.parse(localCart);
-        dispatch(setCartFromLocal(parsed));
+      let parsedCart = [];
+
+      const localHistory = localStorage.getItem("history");
+      let parsedHistory = [];
+      if (localCart || localHistory) {
+        if (localCart) {
+          parsedCart = JSON.parse(localCart);
+          dispatch(setCartFromLocal(parsedCart));
+        }
+
+        if (localHistory) {
+          parsedHistory = JSON.parse(localHistory);
+          dispatch(setHistoryFromLocal(parsedHistory));
+        }
         setLoading(false);
       }
     }

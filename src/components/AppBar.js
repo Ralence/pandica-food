@@ -83,9 +83,10 @@ export default function ProminentAppBar() {
   const router = useRouter();
 
   return (
-    <NavBar>
-      <BigLogo sx={{ marginLeft: "40px" }} src="/pandicaLogo1.jpg"></BigLogo>
-
+    <NavBar id="navbar">
+      <Link href="/">
+        <BigLogo sx={{ marginLeft: "40px" }} src="/pandicaLogo1.jpg"></BigLogo>
+      </Link>
       <NavActions>
         {menuOpened ? (
           <Close

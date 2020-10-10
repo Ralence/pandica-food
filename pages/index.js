@@ -21,7 +21,7 @@ const index = () => {
     <Fragment>
       <ImgBanner image={"/chef.jpg"} alt="chef with a wok" />
       <MainBrandArea title="Restoran Pandica" subTitle="Najbolje kineska hrana u gradu!">
-        <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
+        <p id="fp-top" sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
           Za vas vršimo pripremu i dostavu kineskih jela vrhunskog ukusa i kvaliteta!
         </p>
 
@@ -38,7 +38,7 @@ const index = () => {
           </span>
         </p>
       </MainBrandArea>
-      <Recommendation />
+      {/* <Recommendation /> */}
       <Gallery />
       <div
         sx={{

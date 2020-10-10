@@ -58,19 +58,7 @@ const Gallery = () => {
       >
         Galerija
       </h1>
-      <Text
-        sx={{
-          fontSize: 3,
-          fontWeight: 700,
-          textAlign: "center",
-          margin: 5,
-          marginBottom: 1,
-          marginTop: "1em",
-          color: "secondary",
-        }}
-      >
-        Pogledajte izbor fotografija hrane i enterijera
-      </Text>
+
       <Text p={2} sx={{ fontSize: 3, fontWeight: "bold", padding: 2, textAlign: "center" }}>
         Za više fotografija posetite naš{" "}
         <a
@@ -111,7 +99,8 @@ const Gallery = () => {
             </Text>
           </Flex>
         )}
-        {images && images.map((image) => <GalleryItem key={uid(image)} image={image} />)}
+        {images &&
+          images.slice(0, 12).map((image) => <GalleryItem key={uid(image)} image={image} />)}
       </Flex>
     </Container>
   );

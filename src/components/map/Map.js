@@ -86,18 +86,7 @@ export default class MyMap extends Component {
           >
             Lokacija
           </Text>
-          <Text
-            sx={{
-              fontSize: 3,
-              fontWeight: 700,
-              textAlign: "center",
-              margin: 0,
-              marginTop: "1em",
-              color: "secondary",
-            }}
-          >
-            Naša radnja nalazi se na adresi:
-          </Text>
+
           <Text
             sx={{
               fontSize: 3,
@@ -107,7 +96,7 @@ export default class MyMap extends Component {
               marginBottom: 3,
             }}
           >
-            Pilota Mihaila Petrovića 11090 Rakovica 5a, Serbia
+            Pilota Mihaila Petrovića 5a 11090 Rakovica, Serbia
           </Text>
         </Flex>
         <Map

@@ -26,10 +26,7 @@ import OrderItem from "../src/components/OrderItem";
 import OrderForm from "../src/components/OrderForm";
 
 const cart = () => {
-  const { cart } = useSelector((state) => state.cart);
   const { history } = useSelector((state) => state.cart);
-  console.log("CART", cart);
-  console.log("HISTORY", history);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const dispatch = useDispatch();
@@ -37,7 +34,7 @@ const cart = () => {
   const router = useRouter();
 
   const calculateTotal = useCallback(() => {
-    const sum = cart.reduce((acc, item) => acc + parseInt(item.totalPrice), 0);
+    const sum = history.reduce((acc, item) => acc + parseInt(item.totalPrice), 0);
     setTotalPrice(sum);
   }, [cart]);
 
@@ -47,14 +44,13 @@ const cart = () => {
 
   return (
     <Fragment>
-      <ImgBanner image={"/wok.jpg"} alt="wok full of food" />
-      <MainBrandArea title="Korpa" />
       <Flex
         sx={{
           variant: "containers.card",
           paddingY: "10px",
 
           margin: 2,
+          marginTop: 5,
           backgroundColor: "background",
           width: "95%",
           maxWidth: "700px",
@@ -63,22 +59,11 @@ const cart = () => {
           textTransform: "uppercase",
         }}
       >
-        <Text
-          p={2}
-          sx={{
-            fontSize: 4,
-            fontWeight: "bold",
-            "@media screen and (max-width: 450px)": {
-              fontSize: 3,
-            },
-          }}
-        >
-          Trenutni sadržaj korpe
+        <Text p={2} sx={{ fontSize: 3, fontWeight: "bold" }}>
+          Sadržaj prethodne porudžbine
         </Text>
-        {/* 
-       TODO
-       <Button
-          onClick={() => router.push("/history")}
+        <Button
+          onClick={() => router.push("/menu")}
           sx={{
             margin: "5px",
             alignSelf: "flex-end",
@@ -95,14 +80,14 @@ const cart = () => {
             },
           }}
         >
-          Zadnja porudžbina
-        </Button> */}
+          Meni
+        </Button>
       </Flex>
 
-      {cart.length > 0 ? (
+      {history.length > 0 ? (
         <Fragment>
-          {cart.map((cartItem, index) => {
-            return <OrderItem key={uid(cartItem)} cartItem={cartItem} />;
+          {history.map((historyItem, index) => {
+            return JSON.stringify(historyItem);
           })}
           <Flex
             sx={{
@@ -128,7 +113,9 @@ const cart = () => {
               {totalPrice}din
             </Text>
           </Flex>
-          <Button
+          {/* 
+            TODO repeat the order       
+         <Button
             onClick={() => {
               router.push("/menu");
             }}
@@ -143,6 +130,22 @@ const cart = () => {
             }}
           >
             Dopuni Korpu!
+          </Button> */}
+          <Button
+            onClick={() => {
+              router.push("/menu");
+            }}
+            className="close"
+            sx={{
+              margin: "5px",
+              width: "100%",
+              backgroundColor: "gray",
+              width: "95%",
+              maxWidth: "700px",
+              cursor: "pointer",
+            }}
+          >
+            Nova porudžbina
           </Button>
         </Fragment>
       ) : (
@@ -176,7 +179,7 @@ const cart = () => {
                 marginY: 5,
               }}
             >
-              Vaša korpa je prazna!
+              Nemate prethodnih porudžbi!
             </Text>
 
             <div className="box-footer">
@@ -187,13 +190,12 @@ const cart = () => {
                 className="close"
                 sx={{ margin: "5px", width: "100%", cursor: "pointer", backgroundColor: "gray" }}
               >
-                Dopuni Korpu!
+                Poruči hranu!
               </Button>
             </div>
           </div>
         </Card>
       )}
-      {cart.length > 0 && <OrderForm />}
     </Fragment>
   );
 };

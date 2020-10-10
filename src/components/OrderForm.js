@@ -99,8 +99,11 @@ const OrderForm = () => {
         <Label htmlFor="opstina">Opština</Label>
         <Controller as={Select} name="opstina" control={control} defaultValue="Rakovica" required>
           <option>Rakovica</option>
-          <option>Boop</option>
-          <option>Blip</option>
+          <option>Čukarica</option>
+          <option>Voždovac</option>
+          <option>Savski venac</option>
+          <option>Vračar</option>
+          <option>Zvezdara</option>
         </Controller>
 
         <Label htmlFor="street">Ulica Dostave (pun naziv)</Label>

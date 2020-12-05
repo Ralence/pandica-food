@@ -10,12 +10,7 @@ import {
   AiOutlinePhone,
 } from "react-icons/ai";
 import { keyframes } from "@emotion/core";
-/*
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
-import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
-*/
+
 const TopBar = styled.div`
   width: 100%;
   min-height: 35px;
@@ -101,15 +96,17 @@ const AppTop = () => {
   const isOpenNow = () => {
     const today = new Date();
     const hour = today.getHours();
-    return isWeekend && hour > 12 && hour < 23
+    return isWeekend && hour > 11 && hour < 23
       ? true
-      : !isWeekend && hour > 10 && hour < 23
+      : !isWeekend && hour > 9 && hour < 23
       ? true
       : false;
   };
 
   useEffect(() => {
-    setIsOpen(isOpenNow());
+    setInterval(() => setIsOpen(isOpenNow()), 60000);
+
+    return () => clearInterval(setInterval(setIsOpen(isOpenNow()), 60000));
   }, [isWeekend, isOpenNow]);
 
   return (

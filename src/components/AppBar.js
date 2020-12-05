@@ -173,7 +173,7 @@ export default function ProminentAppBar() {
               </NavLink>
             </Link>
 
-            <Link href="/cart">
+            {/* <Link href="/cart">
               <NavLink
                 sx={{
                   "@media screen and (min-width: 651px)": {
@@ -194,7 +194,7 @@ export default function ProminentAppBar() {
                   Naručite odmah
                 </Button>
               </NavLink>
-            </Link>
+                </Link> */}
           </Fragment>
         )}
         <Fragment>
@@ -267,7 +267,7 @@ export default function ProminentAppBar() {
             {cart.length}
           </Badge>
 
-          <Link href="/cart">
+          {/* <Link href="/cart">
             <NavLink>
               <Button
                 sx={{
@@ -285,7 +285,7 @@ export default function ProminentAppBar() {
                 Naručite odmah
               </Button>
             </NavLink>
-          </Link>
+              </Link> */}
         </Fragment>
       </NavActions>
     </NavBar>

@@ -102,6 +102,7 @@ export default class MyMap extends Component {
         <Map
           center={position}
           zoom={this.state.zoom}
+          scrollWheelZoom={false}
           sx={{
             height: "400px",
             width: "100%",

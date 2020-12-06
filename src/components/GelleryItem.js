@@ -38,7 +38,7 @@ const GelleryItem = ({ image }) => {
           fontSize: 2,
           fontWeight: "bold",
           width: "100%",
-          backgroundColor: "hsl(10,20%,50%, 0.5)",
+          backgroundColor: "hsl(10,20%,50%, 0.7)",
         }}
       >
         {image.caption.split("#")[0]}

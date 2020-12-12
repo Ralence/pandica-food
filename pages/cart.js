@@ -128,6 +128,30 @@ const cart = () => {
               {totalPrice}din
             </Text>
           </Flex>
+          {totalPrice < 500 && (
+            <Flex
+              sx={{
+                flexDirection: "column",
+                variant: "containers.card",
+                paddingY: "10px",
+                textAlign: "center",
+                margin: 2,
+                backgroundColor: "background",
+                width: "100%",
+                maxWidth: "700px",
+                justifyContent: "space-around",
+                alignItems: "center",
+                marginX: "auto",
+              }}
+            >
+              <Text sx={{ color: "primary", fontWeight: "bold" }}>
+                Minimalna vrednost porudžbine za dostavu iznosu 500din.
+              </Text>
+              <Text sx={{ color: "primary", fontWeight: "bold" }}>
+                Molimo vas da dopunite vašu porudžbinu.
+              </Text>
+            </Flex>
+          )}
           <Button
             onClick={() => {
               router.push("/menu");
@@ -193,7 +217,7 @@ const cart = () => {
           </div>
         </Card>
       )}
-      {cart.length > 0 && <OrderForm />}
+      {cart.length > 0 && totalPrice > 499 && <OrderForm />}
     </Fragment>
   );
 };

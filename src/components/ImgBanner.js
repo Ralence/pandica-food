@@ -11,9 +11,9 @@ const ImgBanner = ({ image, alt }) => {
         width: "100%",
         maxWidth: "1200px",
         "@media screen and (max-width: 650px)": {
-          height: "200px",
+          height: "350px",
         },
-        height: "170px",
+        height: "100%",
         objectFit: "cover",
       }}
     ></img>

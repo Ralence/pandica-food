@@ -13,6 +13,7 @@ import {
   Checkbox,
   Select,
   Radio,
+  Grid,
 } from "theme-ui";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useState, useCallback } from "react";
@@ -47,14 +48,30 @@ const cart = () => {
 
   return (
     <Fragment>
-      <ImgBanner image={"/wok.jpg"} alt="wok full of food" />
-      <MainBrandArea title="Korpa" />
+      <Grid
+        width={[300, 300]}
+        columns={["1fr", "1fr 300px"]}
+        sx={{
+          width: "100%",
+          maxWidth: "1200px",
+          backgroundColor: "white",
+          padding: "25px 5px",
+        }}
+      >
+        <MainBrandArea title="Vaša Korpa" subTitle="Izaberite nešto novo i uživajte.">
+          <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
+            Dostave vršimo za porudžbine čija vrednost prelazi 500 dinara.
+          </p>
+        </MainBrandArea>
+        <ImgBanner image={"/box.jpg"} alt="chef with a wok" />
+      </Grid>
       <Flex
         sx={{
           variant: "containers.card",
           paddingY: "10px",
 
           margin: 2,
+          marginTop: 4,
           backgroundColor: "background",
           width: "95%",
           maxWidth: "700px",

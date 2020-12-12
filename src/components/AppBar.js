@@ -172,29 +172,6 @@ export default function ProminentAppBar() {
                 KORPA
               </NavLink>
             </Link>
-
-            {/* <Link href="/cart">
-              <NavLink
-                sx={{
-                  "@media screen and (min-width: 651px)": {
-                    display: "none",
-                  },
-                }}
-              >
-                <Button
-                  sx={{
-                    cursor: "pointer",
-                    fontFamily: theme.fonts.cursive,
-                    textTransform: "uppercase",
-                    ":hover": {
-                      backgroundColor: (theme) => theme.colors.secondary,
-                    },
-                  }}
-                >
-                  Naručite odmah
-                </Button>
-              </NavLink>
-                </Link> */}
           </Fragment>
         )}
         <Fragment>
@@ -266,26 +243,6 @@ export default function ProminentAppBar() {
           >
             {cart.length}
           </Badge>
-
-          {/* <Link href="/cart">
-            <NavLink>
-              <Button
-                sx={{
-                  cursor: "pointer",
-                  fontFamily: theme.fonts.cursive,
-                  textTransform: "uppercase",
-                  ":hover": {
-                    backgroundColor: (theme) => theme.colors.secondary,
-                  },
-                  "@media screen and (max-width: 650px)": {
-                    display: "none",
-                  },
-                }}
-              >
-                Naručite odmah
-              </Button>
-            </NavLink>
-              </Link> */}
         </Fragment>
       </NavActions>
     </NavBar>

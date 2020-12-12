@@ -9,10 +9,20 @@ const MainBrandArea = (props) => {
   return (
     <div
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         width: "100%",
         maxWidth: "1200px",
-        padding: "15px",
-        paddingTop: 0,
+        minHeight: "400px",
+        "@media screen and (max-width: 700px)": {
+          height: "fit-content",
+          minHeight: "unset",
+          paddingBottom: 2,
+        },
+        padding: 4,
+        paddingY: 4,
         backgroundPosition: "right",
         backgroundRepeat: "no-repeat",
       }}
@@ -20,10 +30,8 @@ const MainBrandArea = (props) => {
       <h1
         sx={{
           fontFamily: theme.fonts.cursive,
-          color: theme.colors.primary,
-          textShadow: "2px 2px 4px " + theme.colors.gray,
-          fontSize: 7,
-          marginBottom: 0,
+          fontSize: 6,
+          marginTop: 4,
           textAlign: "center",
           lineHeight: "1em",
           "@media screen and (max-width: 700px)": {

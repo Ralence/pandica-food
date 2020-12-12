@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppContainer sx={{ backgroundColor: theme.colors.mainBackground }}>
+      <AppContainer sx={{ backgroundColor: "white" }}>
         <Head>
           <title>Pandica Fast Food</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />

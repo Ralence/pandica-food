@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Grid } from "theme-ui";
 import React, { Fragment, useEffect } from "react";
 
 import ImgBanner from "../src/components/ImgBanner";
@@ -13,12 +13,24 @@ import path from "path";
 const menu = ({ menu }) => {
   return (
     <Fragment>
-      <ImgBanner image={"/chopstick.jpg"} alt="chopsticks and bowl of noodles" />
-      <MainBrandArea title="Naš Meni" subTitle="Odaberite nešto iz naše ponude!">
-        <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
-          Za vas smo pripremili bogat izbor jela i pića.
-        </p>
-      </MainBrandArea>
+      <Grid
+        width={[300, 300]}
+        columns={["1fr", "1fr 300px"]}
+        sx={{
+          width: "100%",
+          maxWidth: "1200px",
+          backgroundColor: "white",
+          padding: "25px 5px",
+        }}
+      >
+        <MainBrandArea title="Naš Meni" subTitle="Odaberite nešto iz naše ponude!">
+          <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
+            Za vas smo pripremili bogat izbor jela i pića.
+          </p>
+        </MainBrandArea>
+        <ImgBanner image={"/plate3.jpg"} alt="chef with a wok" />
+      </Grid>
+
       <Menu menu={menu} />
     </Fragment>
   );

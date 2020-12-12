@@ -30,7 +30,7 @@ const Menu = ({ menu }) => {
       )}
       {menu && menu.glavna_jela && (
         <MenuSection
-          image="/soup.jpg"
+          image="/plate2.jpg"
           title={menu.glavna_jela.title}
           items={menu.glavna_jela.items}
           description={menu.glavna_jela.description}
@@ -40,7 +40,7 @@ const Menu = ({ menu }) => {
       )}
       {menu && menu.specijalni_meni && (
         <MenuSection
-          image="/soup.jpg"
+          image="/box.jpg"
           title={menu.specijalni_meni.title}
           items={menu.specijalni_meni.items}
           description={menu.specijalni_meni.description}
@@ -49,7 +49,7 @@ const Menu = ({ menu }) => {
       )}
       {menu && menu.vegetarijanski_meni && (
         <MenuSection
-          image="/soup.jpg"
+          image="/veg.jpg"
           title={menu.vegetarijanski_meni.title}
           items={menu.vegetarijanski_meni.items}
           description={menu.vegetarijanski_meni.description}
@@ -57,10 +57,10 @@ const Menu = ({ menu }) => {
         />
       )}
       {menu && menu.salate && (
-        <MenuSection image="/soup.jpg" title={menu.salate.title} items={menu.salate.items} />
+        <MenuSection image="/veg.jpg" title={menu.salate.title} items={menu.salate.items} />
       )}
       {menu && menu.deserti && (
-        <MenuSection image="/soup.jpg" title={menu.deserti.title} items={menu.deserti.items} />
+        <MenuSection image="/sweet.jpg" title={menu.deserti.title} items={menu.deserti.items} />
       )}
     </MenuContainer>
   );

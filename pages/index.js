@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Grid } from "theme-ui";
 import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import MainBrandArea from "../src/components/MainBrandArea";
@@ -19,25 +19,32 @@ const MapWithNoSSR = dynamic(() => import("../src/components/map/Map"), {
 const index = () => {
   return (
     <Fragment>
-      <ImgBanner image={"/chef.jpg"} alt="chef with a wok" />
-      <MainBrandArea title="Restoran Pandica" subTitle="Najbolje kineska hrana u gradu!">
-        <p id="fp-top" sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
-          Za vas vršimo pripremu i dostavu kineskih jela vrhunskog ukusa i kvaliteta!
-        </p>
+      <Grid
+        width={[300, 300]}
+        columns={["1fr", "1fr 300px"]}
+        sx={{ width: "100%", maxWidth: "1200px", backgroundColor: "white", padding: "25px 5px" }}
+      >
+        <MainBrandArea title="Restoran Pandica" subTitle="Najbolje kineska hrana u gradu!">
+          <p id="fp-top" sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
+            Za vas vršimo pripremu i dostavu kineskih jela vrhunskog ukusa i kvaliteta!
+          </p>
 
-        <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
-          Poručite hranu brzo i lako,
-          <span
-            sx={{
-              fontWeight: "bold",
-              color: theme.colors.secondary,
-            }}
-          >
-            {" "}
-            bez registracije, bez kreditne kartice, platite po dostavi!
-          </span>
-        </p>
-      </MainBrandArea>
+          <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
+            Poručite brzo i lako,
+            <span
+              sx={{
+                fontWeight: "bold",
+                color: theme.colors.secondary,
+              }}
+            >
+              {" "}
+              bez registracije, bez kreditne kartice, platite po dostavi!
+            </span>
+          </p>
+        </MainBrandArea>
+        <ImgBanner image={"/plate2.jpg"} alt="chef with a wok" />
+      </Grid>
+
       {/* <Recommendation /> */}
       <Gallery />
       <div

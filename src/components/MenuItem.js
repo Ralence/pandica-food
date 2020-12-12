@@ -15,6 +15,7 @@ const MenuItem = ({ item, meats, section, dodaci }) => {
         flexGrow: 1,
         marginX: 3,
         marginY: 2,
+        padding: 2,
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
@@ -33,10 +34,6 @@ const MenuItem = ({ item, meats, section, dodaci }) => {
           alignItems: "center",
         }}
       >
-        <Image
-          src="/soup.jpg"
-          sx={{ height: "50px", width: "50px", objectFit: "cover", borderRadius: "50%" }}
-        />
         <Text
           sx={{
             fontSize: 3,

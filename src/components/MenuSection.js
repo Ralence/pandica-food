@@ -46,7 +46,22 @@ const MenuSection = ({ title, image, description, items, meats, dodaci }) => {
           p: 0,
         }}
       >
-        <Image src={image} sx={{ height: "70px", width: "70px", objectFit: "cover" }} alt={title} />
+        <Image
+          src={image}
+          sx={{
+            height: "70px",
+            minHeight: "70px",
+            maxHeight: "70px",
+            width: "70px",
+            minWidth: "70px",
+            maxWidth: "70px",
+            objectFit: "cover",
+            borderRadius: "8px",
+            marginBottom: 3,
+            marginTop: 2,
+          }}
+          alt={title}
+        />
         <Text
           sx={{
             fontSize: 5,

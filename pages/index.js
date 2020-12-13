@@ -24,7 +24,7 @@ const index = () => {
         columns={["1fr", "1fr 300px"]}
         sx={{ width: "100%", maxWidth: "1200px", backgroundColor: "white", padding: "25px 5px" }}
       >
-        <MainBrandArea title="Restoran Pandica" subTitle="Najbolje kineska hrana u gradu!">
+        <MainBrandArea title="Restoran Pandica" subTitle="Najbolja kineska hrana u gradu!">
           <p id="fp-top" sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
             Za vas vršimo pripremu i dostavu kineskih jela vrhunskog ukusa i kvaliteta!
           </p>

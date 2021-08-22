@@ -26,6 +26,8 @@ import ImgBanner from "../src/components/ImgBanner";
 import OrderItem from "../src/components/OrderItem";
 import OrderForm from "../src/components/OrderForm";
 
+const MINIMALNA_CENA_ZA_DOSTAVU = 700;
+
 const cart = () => {
   const { cart } = useSelector((state) => state.cart);
   const { history } = useSelector((state) => state.cart);
@@ -145,7 +147,7 @@ const cart = () => {
               {totalPrice}din
             </Text>
           </Flex>
-          {totalPrice < 500 && (
+          {totalPrice < MINIMALNA_CENA_ZA_DOSTAVU && (
             <Flex
               sx={{
                 flexDirection: "column",
@@ -162,7 +164,7 @@ const cart = () => {
               }}
             >
               <Text sx={{ color: "primary", fontWeight: "bold" }}>
-                Minimalna vrednost porudžbine za dostavu iznosu 500din.
+                Minimalna vrednost porudžbine za dostavu iznosu {MINIMALNA_CENA_ZA_DOSTAVU}din.
               </Text>
               <Text sx={{ color: "primary", fontWeight: "bold" }}>
                 Molimo vas da dopunite vašu porudžbinu.

@@ -62,7 +62,7 @@ const cart = () => {
       >
         <MainBrandArea title="Vaša Korpa" subTitle="Izaberite nešto novo i uživajte.">
           <p sx={{ fontSize: 3, textAlign: "center", margin: 0 }}>
-            Dostave vršimo za porudžbine čija vrednost prelazi 500 dinara.
+            Dostave vršimo za porudžbine čija vrednost prelazi {MINIMALNA_CENA_ZA_DOSTAVU} dinara.
           </p>
         </MainBrandArea>
         <ImgBanner image={"/box.jpg"} alt="chef with a wok" />

@@ -1,9 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex, Text } from "theme-ui";
-import styled from "@emotion/styled";
-import React, { Component, createRef } from "react";
-import { Map, TileLayer, Marker, Popup, MapControl, withLeaflet } from "react-leaflet";
-import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
+import { Component, createRef } from "react";
+import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
 import L from "leaflet";
 
@@ -16,21 +14,15 @@ export const pointerIcon = new L.Icon({
   className: "pointer",
 });
 
-const pandaIcon = styled(pointerIcon)`
-  border: 1px solid gray;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px gray;
-`;
-
 export default class MyMap extends Component {
   state = {
     center: {
-      lat: 44.744962,
-      lng: 20.4356063,
+      lat: 44.7489606666621,
+      lng: 20.43190539243863,
     },
     marker: {
-      lat: 44.744962,
-      lng: 20.4356063,
+      lat: 44.7489606666621,
+      lng: 20.43190539243863,
     },
     zoom: 17,
     draggable: false,
@@ -96,7 +88,7 @@ export default class MyMap extends Component {
               marginBottom: 3,
             }}
           >
-            Pilota Mihaila Petrovića 5a 11090 Rakovica, Serbia
+            Kneza Višeslava 31g 11090 Rakovica, Serbia
           </Text>
         </Flex>
         <Map
@@ -122,7 +114,7 @@ export default class MyMap extends Component {
             animate={true}
             ref={this.refmarker}
           >
-            <Popup>Pilota Mihaila Petrovića 5a 11090 Rakovica</Popup>
+            <Popup>Kneza Višeslava 31g 11090 Rakovica</Popup>
           </Marker>
         </Map>
         <style jsx>

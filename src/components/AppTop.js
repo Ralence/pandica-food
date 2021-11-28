@@ -133,7 +133,7 @@ const AppTop = () => {
         ></div>
         {isWeekend ? "12:00 - 23:00" : "10:00 - 23:00"}
         <PhoneIcon />
-        061/14-33-418
+        <a href="tel:061/1433418">061/14-33-418</a>
       </Section>
     </TopBar>
   );

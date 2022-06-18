@@ -4,12 +4,12 @@ var nodemailer = require("nodemailer");
 import { renderHTMLEmail } from "../../utils";
 
 var transporter = nodemailer.createTransport({
-  service: "gmail",
+  service: "yahoo",
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.SOURCE_ADDRESS,
+    pass: process.env.SOURCE_PASS,
   },
 });
 
@@ -21,7 +21,7 @@ const handler = nc().post(async (req, res) => {
   };
 
   var mailOptions = {
-    from: process.env.EMAIL_ADDRESS,
+    from: process.env.SOURCE_ADDRESS,
     to: process.env.EMAIL_ADDRESS,
     subject: "Nova porudžbina sa sajta",
     text: JSON.stringify(order),

@@ -20,6 +20,8 @@ import styled from "@emotion/styled";
 
 import "../styles/globals.css";
 
+const CURRENT_VERSION = 10.2022;
+
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,6 +37,13 @@ function MyApp({ Component, pageProps }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const appVersion = localStorage.getItem("pandica-version");
+
+    if (!appVersion || JSON.parse(appVersion) !== CURRENT_VERSION) {
+      console.log(appVersion, CURRENT_VERSION);
+      localStorage.setItem("pandica-version", CURRENT_VERSION);
+      localStorage.removeItem("cart");
+    }
     if (loading) {
       const localCart = localStorage.getItem("cart");
       let parsedCart = [];

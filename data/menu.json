@@ -370,27 +370,27 @@
     "items": [
       {
         "title": "Hrskava piletine u sosu po želji",
-        "price": { "small": "490", "standard": "640" }
+        "price": { "small": "540", "standard": "690" }
       },
-      { "title": "Kraljevska piletine", "price": { "small": "520", "standard": "740" } },
+      { "title": "Kraljevska piletine", "price": { "small": "570", "standard": "790" } },
       {
         "title": "Pohovana piletina u sosu po želji",
-        "price": { "small": "490", "standard": "640" }
+        "price": { "small": "540", "standard": "690" }
       },
       {
         "title": "Pohovana svinjetina u sosu po želji",
-        "price": { "small": "490", "standard": "640" }
+        "price": { "small": "540", "standard": "690" }
       },
       {
         "title": "Pohovana teletina u sosu po želji",
-        "price": { "small": "570", "standard": "720" }
+        "price": { "small": "620", "standard": "770" }
       },
       {
         "title": "Pohovana pačetina u sosu po želji",
-        "price": { "small": "580", "standard": "780" }
+        "price": { "small": "630", "standard": "830" }
       },
-      { "title": "Kung pao piletina", "price": { "small": "530", "standard": "730" } },
-      { "title": "PANDICA nudle", "price": { "small": "520", "standard": "720" } }
+      { "title": "Kung pao piletina", "price": { "small": "580", "standard": "780" } },
+      { "title": "PANDICA nudle", "price": { "small": "570", "standard": "770" } }
     ]
   },
   "vegetarijanski_meni": {

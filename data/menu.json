@@ -25,16 +25,16 @@
         "title": "U soja sosu",
         "prices": {
           "piletina": {
-            "small": "420",
-            "standard": "550"
+            "small": "470",
+            "standard": "600"
           },
           "teletina": {
-            "small": "460",
-            "standard": "590"
+            "small": "510",
+            "standard": "640"
           },
           "svinjetina": {
-            "small": "420",
-            "standard": "550"
+            "small": "470",
+            "standard": "600"
           }
         }
       },
@@ -42,16 +42,16 @@
         "title": "Sa šampinjonima",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -59,16 +59,16 @@
         "title": "Sa kikirikijem",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -76,16 +76,16 @@
         "title": "Sa indijskim orahom",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       },
@@ -93,16 +93,16 @@
         "title": "Sa bademom",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       },
@@ -110,16 +110,16 @@
         "title": "U sečuan sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -127,16 +127,16 @@
         "title": "U kiselo-slatkom sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -144,16 +144,16 @@
         "title": "U kiselo-slatkom-ljutom sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -161,16 +161,16 @@
         "title": "U kiselo-slatkom-soja sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -178,16 +178,16 @@
         "title": "U slatko-ljutom sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -195,16 +195,16 @@
         "title": "U kiselo-ljutom sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -212,16 +212,16 @@
         "title": "Sa bambusom i šitake pečurkama",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       },
@@ -229,16 +229,16 @@
         "title": "U sosu sa 7 začina",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -246,16 +246,16 @@
         "title": "U Peking sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -263,16 +263,16 @@
         "title": "U kari sosu",
         "prices": {
           "piletina": {
-            "small": "550",
-            "standard": "590"
+            "small": "600",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -280,16 +280,16 @@
         "title": "U sosu sa čilijem i belim lukom",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -297,16 +297,16 @@
         "title": "U terijaki sosu",
         "prices": {
           "piletina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           },
           "teletina": {
-            "small": "490",
-            "standard": "630"
+            "small": "540",
+            "standard": "680"
           },
           "svinjetina": {
-            "small": "450",
-            "standard": "590"
+            "small": "500",
+            "standard": "640"
           }
         }
       },
@@ -314,16 +314,16 @@
         "title": "Sa spanaćem i nanom",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       },
@@ -331,16 +331,16 @@
         "title": "Sa paprikom i brokolijem",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       },
@@ -348,16 +348,16 @@
         "title": "U ostriga sosu",
         "prices": {
           "piletina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           },
           "teletina": {
-            "small": "520",
-            "standard": "680"
+            "small": "570",
+            "standard": "730"
           },
           "svinjetina": {
-            "small": "490",
-            "standard": "640"
+            "small": "540",
+            "standard": "690"
           }
         }
       }

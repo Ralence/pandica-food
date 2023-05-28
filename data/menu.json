@@ -399,21 +399,21 @@
     "items": [
       {
         "title": "Mešano sezonsko povrće u sosu po želji",
-        "price": { "small": "440", "standard": "570" }
+        "price": { "small": "490", "standard": "620" }
       },
       {
         "title": "Pohovani tofu sir u sosu po želji",
-        "price": { "small": "440", "standard": "570" }
+        "price": { "small": "490", "standard": "620" }
       },
       {
         "title": "Pohovane lignje u sosu po želji",
-        "price": { "small": "480", "standard": "680" }
+        "price": { "small": "530", "standard": "730" }
       },
       {
         "title": "Pohovani račići u sosu po želji",
-        "price": { "small": "590", "standard": "790" }
+        "price": { "small": "640", "standard": "840" }
       },
-      { "title": "Pohovana riba u sosu po želji", "price": { "small": "480", "standard": "680" } }
+      { "title": "Pohovana riba u sosu po želji", "price": { "small": "530", "standard": "730" } }
     ]
   },
   "salate": {

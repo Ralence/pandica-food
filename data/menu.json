@@ -432,7 +432,7 @@
     ]
   },
   "vegetarijanski_meni": {
-    "title": "Vegetarijanski meni",
+    "title": "Posni meni",
     "description": "Mala porcija 500g / Standardna porcija 800g",
     "items": [
       {
@@ -468,6 +468,20 @@
         "price": {
           "small": "640",
           "standard": "840"
+        }
+      },
+      {
+        "title": "Pohovani losos u sosu po želji",
+        "price": {
+          "small": "750",
+          "standard": "950"
+        }
+      },
+      {
+        "title": "Pohovana tuna u sosu po želji",
+        "price": {
+          "small": "750",
+          "standard": "950"
         }
       }
     ]

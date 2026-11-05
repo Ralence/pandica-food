@@ -300,7 +300,7 @@ class Modal extends Component {
                 </Fragment>
               )}
             </div>
-            {section && (section === "Specijalni meni" || section === "Vegetarijanski meni") && (
+            {section && (section === "Specijalni meni" || section === "Posni meni") && (
               <Fragment>
                 <Select
                   defaultValue=""

@@ -26,7 +26,7 @@ import ImgBanner from "../src/components/ImgBanner";
 import OrderItem from "../src/components/OrderItem";
 import OrderForm from "../src/components/OrderForm";
 
-const MINIMALNA_CENA_ZA_DOSTAVU = 700;
+const MINIMALNA_CENA_ZA_DOSTAVU = 800;
 
 const cart = () => {
   const { cart } = useSelector((state) => state.cart);
